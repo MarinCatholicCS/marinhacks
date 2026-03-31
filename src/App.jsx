@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import './App.css'
 
-const EVENT_DATE = new Date('2026-08-02T08:00:00-07:00')
+const EVENT_DATE = new Date('2026-08-02T08:00:00-08:00')
 
 const schedule = [
   { time: '8:00 AM', title: 'Check-in', desc: 'Participants arrive and register' },
@@ -259,7 +259,7 @@ export default function App() {
   const [ctaRef, ctaVisible] = useReveal(0.1)
 
   const countdown = useCountdown(EVENT_DATE)
-  const [hoveredEvent, setHoveredEvent] = useState(null)
+  const [hoveredEvent, setHoveredEvent] = useState(schedule[0])
 
   /* Parallax on hero on mouse move */
   const heroContainerRef = useRef(null)
@@ -300,7 +300,7 @@ export default function App() {
             Marin<span className="highlight">Hacks</span>
           </h1>
           <p className="hero-sub">Bay Area's newest high school hackathon</p>
-          <p className="hero-date">August 2, 2026 · MC Library, Kentfield CA</p>
+          <p className="hero-date">August 2, 2026 · Marin Catholic JPII Student Center, Kentfield CA</p>
 
           {/* Countdown Timer */}
           <div className="countdown">
@@ -345,7 +345,7 @@ export default function App() {
           <span className="stat-label">Hours of Hacking</span>
         </div>
         <div className="stat" style={{ transitionDelay: '100ms' }}>
-          <span className="stat-number">50-100</span>
+          <span className="stat-number">100+</span>
           <span className="stat-label">Participants</span>
         </div>
         <div className="stat" style={{ transitionDelay: '200ms' }}>
@@ -372,14 +372,13 @@ export default function App() {
               </p>
               <br />
               <p className="section-desc">
-                Inspired by hackathons at Branson, Monte Vista, Irvington, and Saint Francis, we're
-                bringing that same energy to Marin — to grow CS culture in our community and give
-                students a platform to create.
+                We are bringing trying to bring hackathons into Marin County and grow a cs Culture in our community.
+
               </p>
             </div>
             <div className="about-cards">
               {[
-                { title: 'Theme-Based', desc: 'Build projects around a revealed theme — Connection, Education, and more.' },
+                { title: 'Theme-Based', desc: 'Build projects around a revealed theme which will be announced day of' },
                 { title: 'Catered Food', desc: 'Lunch and dinner provided. Stay fueled and focused all day.' },
                 { title: 'Real Prizes', desc: 'Gift cards and awards for top teams judged by industry professionals.' },
                 { title: 'All Skill Levels', desc: 'Beginners welcome. Solo or team. Form groups on the day of the event.' },
@@ -410,7 +409,6 @@ export default function App() {
                 <div
                   key={item.time}
                   onMouseEnter={() => setHoveredEvent(item)}
-                  onMouseLeave={() => setHoveredEvent(null)}
                 >
                   <RevealItem className={`timeline-item${hoveredEvent === item ? ' hovered' : ''}`} style={{ transitionDelay: `${i * 80}ms` }} threshold={0.3}>
                     <div className="timeline-time">{item.time}</div>
@@ -424,13 +422,11 @@ export default function App() {
             </div>
 
             <div className="schedule-detail-panel">
-              {hoveredEvent && (
-                <div className="schedule-detail-card" key={hoveredEvent.time}>
-                  <div className="schedule-detail-time">{hoveredEvent.time}</div>
-                  <h3 className="schedule-detail-title">{hoveredEvent.title}</h3>
-                  <p className="schedule-detail-desc">{hoveredEvent.desc}</p>
-                </div>
-              )}
+              <div className="schedule-detail-card" key={hoveredEvent.time}>
+                <div className="schedule-detail-time">{hoveredEvent.time}</div>
+                <h3 className="schedule-detail-title">{hoveredEvent.title}</h3>
+                <p className="schedule-detail-desc">{hoveredEvent.desc}</p>
+              </div>
             </div>
           </div>
         </div>
