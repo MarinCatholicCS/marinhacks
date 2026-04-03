@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import './App.css'
+import jpii from './assets/jpii.jpg'
 
 const EVENT_DATE = new Date('2026-08-02T08:00:00-08:00')
 
@@ -376,19 +377,24 @@ export default function App() {
 
               </p>
             </div>
-            <div className="about-cards">
-              {[
-                { title: 'Theme-Based', desc: 'Build projects around a revealed theme which will be announced day of' },
-                { title: 'Catered Food', desc: 'Lunch and dinner provided. Stay fueled and focused all day.' },
-                { title: 'Real Prizes', desc: 'Gift cards and awards for top teams judged by industry professionals.' },
-                { title: 'All Skill Levels', desc: 'Beginners welcome. Solo or team. Form groups on the day of the event.' },
-              ].map((card, i) => (
-                <div className={`about-card reveal${aboutVisible ? ' visible' : ''}`} key={card.title} style={{ transitionDelay: `${200 + i * 100}ms` }}>
-                  <h4>{card.title}</h4>
-                  <p>{card.desc}</p>
-                </div>
-              ))}
+            <div className={`venue-img-wrap reveal${aboutVisible ? ' visible' : ''}`} style={{ transitionDelay: '150ms' }}>
+              <img src={jpii} alt="JPII Student Center at Marin Catholic" className="venue-img" />
+              <p className="venue-caption">John Paul II Student Center · Marin Catholic, Kentfield CA</p>
             </div>
+          </div>
+
+          <div className="about-cards-row">
+            {[
+              { title: 'Theme-Based', desc: 'Build projects around a revealed theme which will be announced day of' },
+              { title: 'Catered Food', desc: 'Lunch and dinner provided. Stay fueled and focused all day.' },
+              { title: 'Real Prizes', desc: 'Gift cards and awards for top teams judged by industry professionals.' },
+              { title: 'All Skill Levels', desc: 'Beginners welcome. Solo or team. Form groups on the day of the event.' },
+            ].map((card, i) => (
+              <div className={`about-card reveal${aboutVisible ? ' visible' : ''}`} key={card.title} style={{ transitionDelay: `${300 + i * 100}ms` }}>
+                <h4>{card.title}</h4>
+                <p>{card.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
