@@ -317,6 +317,7 @@ export default function App() {
           <li><a href="#team">Team</a></li>
           <li><a href="#sponsors">Sponsors & Judges</a></li>
           <li><a href="#faq">FAQ</a></li>
+          <li><a href="https://hcb.hackclub.com/donations/start/marinhacks" target="_blank" rel="noreferrer" className="nav-donate">Donate</a></li>
           <li><a href="https://forms.gle/5eGxKWadr2QK13Lb7" target="_blank" rel="noreferrer" className="nav-cta">Apply Now</a></li>
         </ul>
       </nav>
@@ -578,6 +579,10 @@ export default function App() {
       <footer>
         <div className="footer-logo">Marin<span>Hacks</span></div>
         <p className="footer-copy">© 2026 MarinHacks · Marin Catholic · Kentfield, CA</p>
+        <p className="footer-hcb">
+          Fiscally sponsored by{' '}
+          <a href="https://hcb.hackclub.com/marinhacks" target="_blank" rel="noreferrer" className="footer-hcb-link">HCB</a>
+        </p>
         <div className="footer-socials">
           <a href="https://discord.gg/S6rR2MFm6r" target="_blank" rel="noreferrer" className="footer-social-link" aria-label="Discord">
             <DiscordIcon />

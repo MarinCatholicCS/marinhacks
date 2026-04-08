@@ -272,6 +272,24 @@ nav {
   width: 100%;
 }
 
+.nav-donate {
+  color: var(--accent) !important;
+  border: 1.5px solid var(--accent);
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.nav-donate::after {
+  display: none;
+}
+
+.nav-donate:hover {
+  background: var(--accent);
+  color: var(--white) !important;
+  transform: translateY(-1px);
+}
+
 .nav-cta {
   background: var(--accent);
   color: var(--white) !important;
@@ -1121,6 +1139,21 @@ footer {
 .footer-copy {
   font-size: 0.8rem;
   color: var(--gray);
+}
+
+.footer-hcb {
+  font-size: 0.75rem;
+  color: var(--gray);
+  margin-top: 0.25rem;
+}
+
+.footer-hcb-link {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.footer-hcb-link:hover {
+  text-decoration: underline;
 }
 
 /* ══════════════════════════════════════
