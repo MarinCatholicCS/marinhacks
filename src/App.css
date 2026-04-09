@@ -1136,6 +1136,25 @@ footer {
   color: var(--accent);
 }
 
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.footer-contact a {
+  font-size: 0.82rem;
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-contact a:hover {
+  color: var(--accent-light);
+  text-decoration: underline;
+}
+
 .footer-copy {
   font-size: 0.8rem;
   color: var(--gray);

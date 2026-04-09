@@ -25,7 +25,7 @@ const schedule = [
 const faqs = [
   {
     q: 'Who can participate?',
-    a: 'MarinHacks is open only high school students. Qualified middle school students may appeal once the application is available. All skill levels are welcomed, though we recommend that you come in with a basic knowledge of programming and project management.',
+    a: 'MarinHacks is open to high school students who are 18 or younger on August 2nd, the day of the event. Qualified middle school students may appeal once the application is available. All skill levels are welcomed, though we recommend that you come in with a basic knowledge of programming and project management.',
   },
   {
     q: 'Is it free to attend?',
@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     q: 'What should I bring?',
-    a: 'You should bring a portable laptop, charger, drinks, and snacks. Please do not bring anything too large, ex. External Monitors, 3d Printers. If you have any questions of what to bring, contact us through email or discord',
+    a: 'You should bring a portable laptop, charger, drinks, and snacks. Please do not bring anything too large, ex. External Monitors, 3D Printers. If you have any questions of what to bring, contact us through email or Discord.',
   },
   {
     q: 'Can I work alone or do I need a team?',
@@ -49,11 +49,11 @@ const faqs = [
   },
   {
     q: "Is there a theme?",
-    a: "Yes, there is a theme and it will be revealed during the opening ceromony. All projects, (even in different tracks), must relate to the theme. ",
+    a: "Yes, there is a theme and it will be revealed during the opening ceremony. All projects, (even in different tracks), must relate to the theme.",
   },
   {
     q: "What are the prizes?",
-    a: "Currently, prizes are not finalized, but except Amazon giftcards, API credits, and cool tech for the winners.",
+    a: "Currently, prizes are not finalized, but expect Amazon gift cards, API credits, and cool tech for the winners.",
   }
 ]
 
@@ -375,7 +375,7 @@ export default function App() {
           <span className="stat-label">Hours of Hacking</span>
         </div>
         <div className="stat" style={{ transitionDelay: '100ms' }}>
-          <span className="stat-number">100+</span>
+          <span className="stat-number"><AnimatedNumber value="100" suffix="+" /></span>
           <span className="stat-label">Participants</span>
         </div>
         <div className="stat" style={{ transitionDelay: '200ms' }}>
@@ -402,7 +402,7 @@ export default function App() {
               </p>
               <br />
               <p className="section-desc">
-                We are bringing trying to bring hackathons into Marin County and grow a STEM culture in our community.
+                We are trying to bring hackathons into Marin County and grow a STEM culture in our community.
 
               </p>
             </div>
@@ -578,6 +578,10 @@ export default function App() {
       {/* FOOTER */}
       <footer>
         <div className="footer-logo">Marin<span>Hacks</span></div>
+        <div className="footer-contact">
+          <a href="mailto:sho2027@marincatholic.org">sho2027@marincatholic.org</a>
+          <a href="mailto:nzametto2027@marincatholic.org">nzametto2027@marincatholic.org</a>
+        </div>
         <p className="footer-copy">© 2026 MarinHacks · Marin Catholic · Kentfield, CA</p>
         <p className="footer-hcb">
           Fiscally sponsored by{' '}
