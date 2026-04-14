@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import './App.css'
 import jpii from './assets/jpii.jpg'
 import stanley from './assets/stanley.jpg'
+import alex from './assets/alex.jpg'
 import marinhacksLogo from './assets/marinhacks.png'
 
 const EVENT_DATE = new Date('2026-08-02T08:00:00-08:00')
@@ -64,7 +65,7 @@ const leads = [
 
 const organizers = [
   { name: 'Gavin Perry', role: 'Organizer', initials: 'G' },
-  { name: 'Alex Willard', role: 'Organizer', initials: 'A', linkedin: 'https://www.linkedin.com/in/alex-willard-14aa5838b/' },
+  { name: 'Alex Willard', role: 'Organizer', initials: 'A', photo: alex, linkedin: 'https://www.linkedin.com/in/alex-willard-14aa5838b/' },
   { name: 'Chase Hatch', role: 'Organizer', initials: 'CH' },
   { name: 'Joseph Colombo', role: 'Volunteer', initials: 'JC' },
 ]
