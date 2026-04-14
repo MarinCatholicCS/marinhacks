@@ -568,11 +568,6 @@ export default function App() {
             about the theme, sponsors, and updates. More details to come.
           </p>
           <a href="https://forms.gle/5eGxKWadr2QK13Lb7" target="_blank" rel="noreferrer" className="btn-primary btn-glow">Apply Now</a>
-          <p className="waiver-note">
-            All participants must print and sign the{' '}
-            <a href="https://docs.google.com/document/d/e/2PACX-1vR5KcvjyTwVs-asI3aMDXpFJMex1yTQ93TRo0HLrkOJDPQEatcM-jcOJCqxUvtTLGlhOPWyEa9Bmvx2/pub" target="_blank" rel="noreferrer" className="faq-link">participant waiver</a>{' '}
-            before entering the venue.
-          </p>
         </div>
       </section>
 
@@ -580,8 +575,7 @@ export default function App() {
       <footer>
         <div className="footer-logo">Marin<span>Hacks</span></div>
         <div className="footer-contact">
-          <a href="mailto:sho2027@marincatholic.org">sho2027@marincatholic.org</a>
-          <a href="mailto:nzametto2027@marincatholic.org">nzametto2027@marincatholic.org</a>
+          <a href="mailto:marinhacksofficial@gmail.com">marinhacksofficial@gmail.com</a>
         </div>
         <p className="footer-copy">© 2026 MarinHacks · Marin Catholic · Kentfield, CA</p>
         <p className="footer-hcb">
