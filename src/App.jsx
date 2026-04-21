@@ -3,7 +3,9 @@ import './App.css'
 import jpii from './assets/jpii.jpg'
 import stanley from './assets/stanley.jpg'
 import alex from './assets/alex.jpg'
+import nico from './assets/nico.jpg'
 import marinhacksLogo from './assets/marinhacks.png'
+import wolframLogo from './assets/wolfram.png'
 
 const EVENT_DATE = new Date('2026-08-02T08:00:00-08:00')
 
@@ -60,15 +62,18 @@ const faqs = [
 
 const leads = [
   { name: 'Stanley Ho', role: 'Lead Director', initials: 'S', photo: stanley, linkedin: 'https://www.linkedin.com/in/stanley-ho-66748a338/' },
-  { name: 'Nico Zametto', role: 'Lead Director', initials: 'N', linkedin: 'https://www.linkedin.com/in/nico-zametto-a862643b4/' },
+  { name: 'Nico Zametto', role: 'Lead Director', initials: 'N', photo: nico, linkedin: 'https://www.linkedin.com/in/nico-zametto-a862643b4/' },
+  { name: 'Alex Willard', role: 'Outreach Director', initials: 'A', photo: alex, linkedin: 'https://www.linkedin.com/in/alex-willard-14aa5838b/' },
 ]
 
-const organizers = [
-  { name: 'Gavin Perry', role: 'Organizer', initials: 'G' },
-  { name: 'Alex Willard', role: 'Organizer', initials: 'A', photo: alex, linkedin: 'https://www.linkedin.com/in/alex-willard-14aa5838b/' },
-  { name: 'Chase Hatch', role: 'Organizer', initials: 'CH' },
-  { name: 'Joseph Colombo', role: 'Volunteer', initials: 'JC' },
+const assistantOrganizers = [
+  { name: 'Gavin Pan', role: 'Assistant Organizer', initials: 'GP' },
+  { name: 'Gavin Perry', role: 'Assistant Organizer', initials: 'GP' },
+  { name: 'Wesley Fong', role: 'Assistant Organizer', initials: 'WF' },
+  { name: 'Joseph Colombo', role: 'Assistant Organizer', initials: 'JC' },
 ]
+
+const organizers = []
 
 const advisors = [
   { name: 'Mr. Adib', role: 'Faculty Advisor', initials: 'MA' },
@@ -316,7 +321,8 @@ export default function App() {
           <li><a href="#about">About</a></li>
           <li><a href="#schedule">Schedule</a></li>
           <li><a href="#team">Team</a></li>
-          <li><a href="#sponsors">Sponsors & Judges</a></li>
+          <li><a href="#sponsors">Sponsors</a></li>
+          <li><a href="#judges">Judges</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="https://hcb.hackclub.com/donations/start/marinhacks" target="_blank" rel="noreferrer" className="nav-donate">Donate</a></li>
           <li><a href="https://forms.gle/5eGxKWadr2QK13Lb7" target="_blank" rel="noreferrer" className="nav-cta">Apply Now</a></li>
@@ -488,6 +494,13 @@ export default function App() {
             ))}
           </div>
 
+          {/* Assistant Organizers */}
+          <div className="team-grid team-assistants">
+            {assistantOrganizers.map((member, i) => (
+              <TeamCard key={member.name} member={member} delay={i * 100} />
+            ))}
+          </div>
+
           {/* Organizers & Volunteers */}
           <div className="team-grid">
             {organizers.map((member, i) => (
@@ -504,30 +517,36 @@ export default function App() {
         </div>
       </section>
 
-      {/* SPONSORS & JUDGES */}
+      {/* SPONSORS */}
       <section id="sponsors">
         <div className="container" ref={sponsorsRef}>
           <div className={`reveal${sponsorsVisible ? ' visible' : ''}`}>
-            <div className="sponsors-layout">
-              <div>
-                <p className="section-label">Sponsors & Judges</p>
-                <h2 className="section-title">Coming soon</h2>
-                <p className="section-desc">
-                  We are currently reaching out to sponsors and judges for MarinHacks.
-                  Details will be announced soon.
-                </p>
-              </div>
-              <div className="sponsors-cta-wrap">
-                <a href="https://forms.gle/XdaH5fmDHNMemKuc8" target="_blank" rel="noreferrer" className="sponsors-cta">
-                  Interested in sponsoring or judging?
-                  <span className="sponsors-cta-apply">Apply Here</span>
-                </a>
-              </div>
+            <p className="section-label">Sponsors</p>
+            <h2 className="section-title">Our sponsors</h2>
+            <p className="section-desc">
+              MarinHacks is made possible by the generous support of our sponsors. We're
+              actively reaching out to more partners — check back soon for additions.
+            </p>
+            <div className="sponsor-grid sponsor-grid-centered">
+              <a href="https://www.wolfram.com/" target="_blank" rel="noreferrer" className="sponsor-card">
+                <img src={wolframLogo} alt="Wolfram" className="sponsor-logo" />
+              </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* JUDGES */}
+      <section id="judges">
+        <div className="container">
+          <div className={`reveal${sponsorsVisible ? ' visible' : ''}`}>
+            <p className="section-label">Judges</p>
+            <h2 className="section-title">Meet the judges</h2>
+            <p className="section-desc">
+              Our judging panel will be announced soon. We're bringing in industry professionals
+              to evaluate projects and share feedback with participants.
+            </p>
             <div className="tbd-placeholder">
-              <div className="tbd-box">
-                <span className="tbd-text">Sponsors TBD</span>
-              </div>
               <div className="tbd-box">
                 <span className="tbd-text">Judges TBD</span>
               </div>
