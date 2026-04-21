@@ -6,6 +6,7 @@ import alex from './assets/alex.jpg'
 import nico from './assets/nico.jpg'
 import marinhacksLogo from './assets/marinhacks.png'
 import wolframLogo from './assets/wolfram.png'
+import aopsLogo from './assets/aops.png'
 
 const EVENT_DATE = new Date('2026-08-02T08:00:00-08:00')
 
@@ -530,6 +531,9 @@ export default function App() {
             <div className="sponsor-grid sponsor-grid-centered">
               <a href="https://www.wolfram.com/" target="_blank" rel="noreferrer" className="sponsor-card">
                 <img src={wolframLogo} alt="Wolfram" className="sponsor-logo" />
+              </a>
+              <a href="https://artofproblemsolving.com/" target="_blank" rel="noreferrer" className="sponsor-card">
+                <img src={aopsLogo} alt="Art of Problem Solving" className="sponsor-logo" />
               </a>
             </div>
           </div>
