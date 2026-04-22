@@ -273,7 +273,7 @@ function TeamCard({ member, delay, isLead }) {
   const card = (
     <RevealItem className={`team-card${isLead ? ' team-card-lead' : ''}${member.linkedin ? ' team-card-link' : ''}`} style={{ transitionDelay: `${delay}ms` }}>
       {member.photo
-        ? <img src={member.photo} alt={member.name} className="team-avatar team-avatar-photo" />
+        ? <img src={member.photo} alt={member.name} className="team-avatar team-avatar-photo" loading="lazy" decoding="async" />
         : <div className="team-avatar">{member.initials}</div>
       }
       <h4>{member.name}</h4>
@@ -330,6 +330,7 @@ export default function App() {
         </ul>
       </nav>
 
+      <main>
       {/* HERO */}
       <section className="hero" id="home" onMouseMove={handleMouseMove} ref={heroContainerRef}>
         <div className="hero-bg" />
@@ -415,7 +416,7 @@ export default function App() {
               </p>
             </div>
             <div className={`venue-img-wrap reveal${aboutVisible ? ' visible' : ''}`} style={{ transitionDelay: '150ms' }}>
-              <img src={jpii} alt="JPII Student Center at Marin Catholic" className="venue-img" />
+              <img src={jpii} alt="JPII Student Center at Marin Catholic" className="venue-img" loading="lazy" decoding="async" />
               <p className="venue-caption">John Paul II Student Center · Marin Catholic, Kentfield CA</p>
             </div>
           </div>
@@ -530,10 +531,10 @@ export default function App() {
             </p>
             <div className="sponsor-grid sponsor-grid-centered">
               <a href="https://www.wolfram.com/" target="_blank" rel="noreferrer" className="sponsor-card">
-                <img src={wolframLogo} alt="Wolfram" className="sponsor-logo" />
+                <img src={wolframLogo} alt="Wolfram" className="sponsor-logo" loading="lazy" decoding="async" />
               </a>
               <a href="https://artofproblemsolving.com/" target="_blank" rel="noreferrer" className="sponsor-card">
-                <img src={aopsLogo} alt="Art of Problem Solving" className="sponsor-logo" />
+                <img src={aopsLogo} alt="Art of Problem Solving" className="sponsor-logo" loading="lazy" decoding="async" />
               </a>
             </div>
           </div>
@@ -593,6 +594,7 @@ export default function App() {
           <a href="https://forms.gle/5eGxKWadr2QK13Lb7" target="_blank" rel="noreferrer" className="btn-primary btn-glow">Apply Now</a>
         </div>
       </section>
+      </main>
 
       {/* FOOTER */}
       <footer>
