@@ -5,8 +5,9 @@ import stanley from './assets/stanley.jpg'
 import alex from './assets/alex.jpg'
 import nico from './assets/nico.jpg'
 import marinhacksLogo from './assets/marinhacks.png'
-import wolframLogo from './assets/wolfram.png'
-import aopsLogo from './assets/aops.png'
+import wolframLogo from './assets/sponsors/wolfram.png'
+import aopsLogo from './assets/sponsors/aops.png'
+import hackpilotLogo from './assets/sponsors/hackpilot.png'
 
 const EVENT_DATE = new Date('2026-08-02T08:00:00-08:00')
 
@@ -535,6 +536,9 @@ export default function App() {
               </a>
               <a href="https://artofproblemsolving.com/" target="_blank" rel="noreferrer" className="sponsor-card">
                 <img src={aopsLogo} alt="Art of Problem Solving" className="sponsor-logo" loading="lazy" decoding="async" />
+              </a>
+              <a href="https://www.hackpilot.io/" target="_blank" rel="noreferrer" className="sponsor-card">
+                <img src={hackpilotLogo} alt="HackPilot" className="sponsor-logo" loading="lazy" decoding="async" />
               </a>
             </div>
           </div>
