@@ -8,6 +8,7 @@ import marinhacksLogo from './assets/marinhacks.png'
 import wolframLogo from './assets/sponsors/wolfram.png'
 import aopsLogo from './assets/sponsors/aops.png'
 import hackpilotLogo from './assets/sponsors/hackpilot.png'
+import yriLogo from './assets/sponsors/yri.jpg'
 
 const EVENT_DATE = new Date('2026-08-02T08:00:00-08:00')
 
@@ -539,6 +540,9 @@ export default function App() {
               </a>
               <a href="https://www.hackpilot.io/" target="_blank" rel="noreferrer" className="sponsor-card">
                 <img src={hackpilotLogo} alt="HackPilot" className="sponsor-logo" loading="lazy" decoding="async" />
+              </a>
+              <a href="https://www.yriscience.com/" target="_blank" rel="noreferrer" className="sponsor-card">
+                <img src={yriLogo} alt="YRI" className="sponsor-logo" loading="lazy" decoding="async" />
               </a>
             </div>
           </div>
