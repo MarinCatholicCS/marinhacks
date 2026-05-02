@@ -8,6 +8,7 @@ import marinhacksLogo from './assets/marinhacks.png'
 import wolframLogo from './assets/sponsors/wolfram.png'
 import aopsLogo from './assets/sponsors/aops.png'
 import hackpilotLogo from './assets/sponsors/hackpilot.png'
+import prospectusPdf from './assets/MarinHacks_Sponsorship_Prospectus.pdf'
 
 const EVENT_DATE = new Date('2026-08-02T08:00:00-08:00')
 
@@ -525,7 +526,12 @@ export default function App() {
         <div className="container" ref={sponsorsRef}>
           <div className={`reveal${sponsorsVisible ? ' visible' : ''}`}>
             <p className="section-label">Sponsors</p>
-            <h2 className="section-title">Our sponsors</h2>
+            <div className="sponsors-heading-row">
+              <h2 className="section-title">Our sponsors</h2>
+              <a href={prospectusPdf} target="_blank" rel="noreferrer" className="btn-secondary">
+                View Sponsorship Prospectus
+              </a>
+            </div>
             <p className="section-desc">
               MarinHacks is made possible by the generous support of our sponsors. We're
               actively reaching out to more partners — check back soon for additions.

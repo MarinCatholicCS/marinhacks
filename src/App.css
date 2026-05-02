@@ -1042,6 +1042,24 @@ section {
   object-fit: contain;
 }
 
+.sponsors-heading-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.sponsors-heading-row .section-title {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .sponsors-heading-row {
+    justify-content: flex-start;
+  }
+}
+
 /* ══════════════════════════════════════
    FAQ
    ══════════════════════════════════════ */
