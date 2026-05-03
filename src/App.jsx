@@ -372,7 +372,7 @@ export default function App() {
             <a href="https://forms.gle/5eGxKWadr2QK13Lb7" target="_blank" rel="noreferrer" className="btn-primary">
               Apply Now
             </a>
-            <a href="https://discord.gg/S6rR2MFm6r" target="_blank" rel="noreferrer" className="btn-secondary">
+            <a href="https://discord.gg/apMVepA7fK" target="_blank" rel="noreferrer" className="btn-secondary">
               Join our Discord
             </a>
           </div>
@@ -527,7 +527,7 @@ export default function App() {
           <div className={`reveal${sponsorsVisible ? ' visible' : ''}`}>
             <p className="section-label">Sponsors</p>
             <div className="sponsors-heading-row">
-              <h2 className="section-title">Our sponsors</h2>
+              <h2 className="section-title">Our Sponsors</h2>
               <a href={prospectusPdf} target="_blank" rel="noreferrer" className="btn-secondary">
                 View Sponsorship Prospectus
               </a>
@@ -618,7 +618,7 @@ export default function App() {
           <a href="https://hcb.hackclub.com/marinhacks" target="_blank" rel="noreferrer" className="footer-hcb-link">HCB</a>
         </p>
         <div className="footer-socials">
-          <a href="https://discord.gg/S6rR2MFm6r" target="_blank" rel="noreferrer" className="footer-social-link" aria-label="Discord">
+          <a href="https://discord.gg/apMVepA7fK" target="_blank" rel="noreferrer" className="footer-social-link" aria-label="Discord">
             <DiscordIcon />
           </a>
         </div>
