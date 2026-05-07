@@ -5,6 +5,7 @@ import stanley from './assets/stanley.jpg'
 import alex from './assets/alex.jpg'
 import nico from './assets/nico.jpg'
 import marinhacksLogo from './assets/marinhacks.png'
+import codecraftersLogo from './assets/sponsors/codecrafters.svg'
 import wolframLogo from './assets/sponsors/wolfram.png'
 import aopsLogo from './assets/sponsors/aops.png'
 import hackpilotLogo from './assets/sponsors/hackpilot.png'
@@ -537,6 +538,9 @@ export default function App() {
               actively reaching out to more partners — check back soon for additions.
             </p>
             <div className="sponsor-grid sponsor-grid-centered">
+              <a href="https://codecrafters.io/" target="_blank" rel="noreferrer" className="sponsor-card">
+                <img src={codecraftersLogo} alt="CodeCrafters" className="sponsor-logo" loading="lazy" decoding="async" />
+              </a>
               <a href="https://www.wolfram.com/" target="_blank" rel="noreferrer" className="sponsor-card">
                 <img src={wolframLogo} alt="Wolfram" className="sponsor-logo" loading="lazy" decoding="async" />
               </a>
@@ -545,6 +549,12 @@ export default function App() {
               </a>
               <a href="https://www.hackpilot.io/" target="_blank" rel="noreferrer" className="sponsor-card">
                 <img src={hackpilotLogo} alt="HackPilot" className="sponsor-logo" loading="lazy" decoding="async" />
+              </a>
+              <a href="mailto:marinhacksofficial@gmail.com" className="sponsor-card sponsor-card-cta">
+                <div className="sponsor-cta-inner">
+                  <span className="sponsor-cta-label">Your Company</span>
+                  <span className="sponsor-cta-sub">Become a sponsor</span>
+                </div>
               </a>
             </div>
           </div>
