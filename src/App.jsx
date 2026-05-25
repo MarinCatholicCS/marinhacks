@@ -11,24 +11,25 @@ import aopsLogo from './assets/sponsors/aops.png'
 import hackpilotLogo from './assets/sponsors/hackpilot.png'
 import yriLogo from './assets/sponsors/yri.jpg'
 import xyzLogo from './assets/sponsors/xyz-logo-color.png'
+import mastraLogo from './assets/sponsors/mastra.svg'
 import prospectusPdf from './assets/MarinHacks_Sponsorship_Prospectus.pdf'
 
 const EVENT_DATE = new Date('2026-08-02T08:00:00-08:00')
 
 const schedule = [
-  { time: '8:00 AM', title: 'Check-in', desc: 'Participants arrive and register', detail: 'Check in at the door of the JPII student center. Remember to bring your participant waiver. Participants can get their setup ready and wait for the opening ceremony.' },
-  { time: '8:15 AM', title: 'Welcome Presentation', desc: 'Opening remarks and introductions', detail: 'Opening remarks and introductions. We will introduce the MarinHacks Team, Sponsors, Judges and more.' },
-  { time: '8:30 AM', title: 'Theme Reveal & Start', desc: 'Theme is announced — hacking begins!', detail: 'We will finally announce the overall theme and tracks. Right after the presentation, Hacking Begins!' },
-  { time: '9:00 AM', title: "Nico Zametto's Workshop", desc: 'How to Hackathon', detail: "Nico Zametto, a 3x Hackathon Winner, will give a workshop and presentation about 'How to Hackathon.' Hackathons are not just about creating a product or service, but presenting it well in the short ammount of demo time." },
-  { time: '10:00 AM', title: 'Chess Tournament', desc: 'Take a break and compete in the chess tournament', detail: 'Starting at 10:00, we will host a chess tournament throughout the duration of the hackathon. You will face off in a single elimination bracket style tournament of 5 min. Blitz games. Winner gets some swag' },
-  { time: '12:00 PM', title: 'Lunch', desc: 'Catered lunch break — recharge and network', detail: 'Lunch will be consisted of assorted sandwhiches and salad. Take a break from all the programming and refuel.' },
-  { time: '1:00 PM', title: 'Boba Break', desc: 'Boba for everyone — keep the energy up', detail: 'Thanks to our local sponsor, Sharetea, those who signed up for a Boba drink during registration will recieve free Boba.' },
-  { time: '3:00 PM', title: 'Code this Algorithm', desc: 'What are you without your agent?', detail: 'What are you without your agent? The era of vibecoding has made us all forget about real coding. In a bracket style first to finish tournament, go 1v1 against fellow programmers to see who can write accurate algorithms quickly, ON PAPER!!!' },
-  { time: '6:00 PM', title: 'Submissions Due', desc: 'All projects must be submitted by 6:00 PM', detail: 'All projects must be submitted on DevPost by 6:00 PM. No exceptions. Any github commit after 6:00 will be a immediate disqualifcation. Of course, you can refine your presentation and demo.' },
-  { time: '6:10 PM', title: 'Pizza Party', desc: 'Catered dinner before the judging starts', detail: 'Eat some Costco pizza before you present to the judges. You better refuel up!' },
-  { time: '6:30 PM', title: 'Judging Starts', desc: 'Judging Schedule released', detail: 'Teams will be called to a room to present in front of 3 judges. Be ready to present what you have been working on for so long.' },
-  { time: '7:30 PM', title: 'Geoguessr & Trivia', desc: 'Tournament and trivia while winners are tallied', detail: 'Hosted by Alex Willard, all participants are invited to participate in the Geoguessr tournament while winners are being tallied up' },
-  { time: '8:00 PM', title: 'Closing Ceremony', desc: 'Winners announced and closing remarks', detail: 'No matter win or lose, you should leave the hackathon feeling proud of what you accomplished in such a short amount of time' },
+  { time: '8:00 AM', title: 'Check-in', desc: 'Participants arrive and get settled', detail: 'Check in at the entrance of the JPII Student Center. Remember to bring your signed participant waiver. Feel free to get your workspace set up while you wait for the opening ceremony.' },
+  { time: '8:15 AM', title: 'Welcome Presentation', desc: 'Opening remarks and introductions', detail: 'Kick off MarinHacks with opening remarks from the organizing team. We will introduce our staff, sponsors, judges, and walk through everything you need to know for the day.' },
+  { time: '8:30 AM', title: 'Theme Reveal & Start', desc: 'Theme announced — hacking begins!', detail: 'The overall theme and track categories will be revealed. Immediately following the announcement, hacking officially begins — good luck!' },
+  { time: '9:00 AM', title: "Nico Zametto's Workshop", desc: 'How to Hackathon', detail: "Nico Zametto — a 4x hackathon winner and winner of a Y Combinator hackathon — will lead an interactive workshop on how to approach and excel at hackathons. Learn how to scope your idea, build efficiently under time pressure, and deliver a compelling demo." },
+  { time: '10:00 AM', title: 'Chess Tournament', desc: 'Step away from the keyboard and compete', detail: 'Need a mental reset? Join our single-elimination blitz chess tournament running throughout the day. Games are 5 minutes each. The winner takes home some MarinHacks swag.' },
+  { time: '12:00 PM', title: 'Lunch', desc: 'Catered lunch break — recharge and connect', detail: 'Take a break and enjoy a catered lunch featuring assorted sandwiches and salad. A great opportunity to step away from your project, meet other participants, and recharge for the afternoon.' },
+  { time: '1:00 PM', title: 'Boba Break', desc: 'Complimentary boba courtesy of Sharetea', detail: 'Courtesy of our local sponsor Sharetea, participants who selected a boba drink during registration can pick up their free drink. A small perk to keep the energy going.' },
+  { time: '3:00 PM', title: 'Code this Algorithm', desc: 'Old-school coding challenge — no AI allowed', detail: 'Think you can code without your AI assistant? In this bracket-style competition, go head-to-head against fellow participants to see who can write a correct algorithm the fastest — on paper. A fun reminder that the fundamentals still matter.' },
+  { time: '6:00 PM', title: 'Submissions Due', desc: 'All projects must be submitted by 6:00 PM', detail: 'All projects must be submitted to DevPost by 6:00 PM sharp. Any commits to your repository after the deadline will result in immediate disqualification. You are welcome to continue refining your presentation and demo after submission.' },
+  { time: '6:10 PM', title: 'Dinner', desc: 'Pizza served before judging begins', detail: 'Fuel up before you present. Pizza will be served while teams prepare for their judging slots.' },
+  { time: '6:30 PM', title: 'Judging Begins', desc: 'Teams present to a panel of judges', detail: 'Teams will be called in scheduled order to present their projects to a panel of three judges. Be prepared to walk through your project, explain your process, and demo what you built.' },
+  { time: '7:30 PM', title: 'Geoguessr & Trivia', desc: 'Open activities while results are tallied', detail: 'Hosted by Alex Willard, all participants are welcome to join a Geoguessr tournament and trivia rounds while the judges finalize scores and deliberate on winners.' },
+  { time: '8:00 PM', title: 'Closing Ceremony', desc: 'Winners announced and closing remarks', detail: 'Join us for the closing ceremony as we announce the winners, hand out awards, and wrap up the day. Regardless of the outcome, take pride in what you built — creating something from nothing in 12 hours is no small feat.' },
 ]
 
 const faqs = [
@@ -62,7 +63,7 @@ const faqs = [
   },
   {
     q: "What are the prizes?",
-    a: "Currently, prizes are not finalized, but expect Amazon gift cards, API credits, and cool tech for the winners.",
+    a: "Top teams will be awarded Amazon gift cards — $250 for 1st place, $150 for 2nd, and $100 for 3rd. Beyond the overall prizes, each track will feature its own dedicated awards, including research program scholarships and credits from our sponsor companies. All registered participants will receive access to a curated set of sponsor tools throughout the event.",
   }
 ]
 
@@ -77,6 +78,7 @@ const assistantOrganizers = [
   { name: 'Gavin Perry', role: 'Assistant Organizer', initials: 'GP' },
   { name: 'Wesley Fong', role: 'Assistant Organizer', initials: 'WF' },
   { name: 'Joseph Colombo', role: 'Assistant Organizer', initials: 'JC' },
+  { name: 'Izzy Clayton', role: 'Assistant Organizer', initials: 'IC' },
 ]
 
 const organizers = []
@@ -342,7 +344,6 @@ export default function App() {
         <div className="hero-grid" />
         <FloatingShapes />
         <div className={`hero-content${heroVisible ? ' visible' : ''}`} ref={heroRef}>
-          <div className="hero-badge">Marin Catholic's First Hackathon</div>
           <h1>
             Marin<span className="highlight">Hacks</span>
           </h1>
@@ -430,7 +431,7 @@ export default function App() {
             {[
               { title: 'Theme-Based', desc: 'Build projects around a revealed theme which will be announced day of' },
               { title: 'Catered Food', desc: 'Lunch and dinner provided. Stay fueled and focused all day.' },
-              { title: 'Real Prizes', desc: 'Gift cards and awards for top teams judged by industry professionals.' },
+              { title: 'Real Prizes', desc: 'Compete for Amazon gift cards, track-specific awards including scholarships and sponsor credits, and tool access for every participant.' },
               { title: 'All Skill Levels', desc: 'Beginners welcome. Solo or team. Form groups on the day of the event.' },
             ].map((card, i) => (
               <div className={`about-card reveal${aboutVisible ? ' visible' : ''}`} key={card.title} style={{ transitionDelay: `${300 + i * 100}ms` }}>
@@ -501,24 +502,10 @@ export default function App() {
             ))}
           </div>
 
-          {/* Assistant Organizers */}
+          {/* Assistant Organizers + Advisors */}
           <div className="team-grid team-assistants">
-            {assistantOrganizers.map((member, i) => (
+            {[...assistantOrganizers, ...advisors].map((member, i) => (
               <TeamCard key={member.name} member={member} delay={i * 100} />
-            ))}
-          </div>
-
-          {/* Organizers & Volunteers */}
-          <div className="team-grid">
-            {organizers.map((member, i) => (
-              <TeamCard key={member.name} member={member} delay={(i + 2) * 100} />
-            ))}
-          </div>
-
-          {/* Advisors */}
-          <div className="team-advisors">
-            {advisors.map((member, i) => (
-              <TeamCard key={member.name} member={member} delay={(i + 6) * 100} />
             ))}
           </div>
         </div>
@@ -557,6 +544,9 @@ export default function App() {
               </a>
               <a href="https://gen.xyz/" target="_blank" rel="noreferrer" className="sponsor-card">
                 <img src={xyzLogo} alt=".XYZ" className="sponsor-logo" loading="lazy" decoding="async" />
+              </a>
+              <a href="https://mastra.ai/" target="_blank" rel="noreferrer" className="sponsor-card">
+                <img src={mastraLogo} alt="Mastra" className="sponsor-logo" style={{ maxWidth: '130px' }} loading="lazy" decoding="async" />
               </a>
               <a href="mailto:marinhacksofficial@gmail.com" className="sponsor-card sponsor-card-cta">
                 <div className="sponsor-cta-inner">
