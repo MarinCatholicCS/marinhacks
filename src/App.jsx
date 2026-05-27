@@ -4,6 +4,7 @@ import jpii from './assets/jpii.jpg'
 import stanley from './assets/stanley.jpg'
 import alex from './assets/alex.jpg'
 import nico from './assets/nico.jpg'
+import adib from './assets/momath.webp'
 import marinhacksLogo from './assets/marinhacks.png'
 import codecraftersLogo from './assets/sponsors/codecrafters.svg'
 import wolframLogo from './assets/sponsors/wolfram.png'
@@ -105,7 +106,7 @@ const judges = [
 ]
 
 const advisors = [
-  { name: 'Mr. Adib', role: 'Faculty Advisor', initials: 'MA' },
+  { name: 'Mr. Adib', role: 'Faculty Advisor', photo: adib, initials: 'MA' },
 ]
 
 /* ── Countdown hook ── */
