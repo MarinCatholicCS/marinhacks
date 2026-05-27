@@ -1,0 +1,8 @@
+Neelakshi Soni
+{Neelakshi is a Software Engineer at Meta, previously at Amazon, where she has worked on large-scale distributed systems, experimentation platforms, and backend infrastructure. She is passionate about AI infrastructure, developer tooling, scalable systems, and emerging agentic technologies. Based in the Bay Area, she enjoys mentoring builders and helping teams translate ambitious ideas into production-ready systems.}
+
+Karan Shah
+{Karan is a Product Manager with 10 years of experience building high-impact fintech and SaaS products. He has launched multiple products from 0 to 1 and has held product leadership roles at ServiceNow, Flexport, and Bill.com. He holds an M.S. in Computer Science from Rochester Institute of Technology.}
+
+Disha Patel
+{Disha is a Software Engineer at a leading tech company with experience in machine learning systems and mobile application development. She has published research in large language models and automated system diagnostics, and previously served as an instructor for iOS Mobile Application Development at California State University, Fullerton, where she mentored and evaluated student software projects across multiple semesters.}

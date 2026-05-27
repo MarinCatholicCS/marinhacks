@@ -12,24 +12,27 @@ import hackpilotLogo from './assets/sponsors/hackpilot.png'
 import yriLogo from './assets/sponsors/yri.jpg'
 import xyzLogo from './assets/sponsors/xyz-logo-color.png'
 import mastraLogo from './assets/sponsors/mastra.svg'
+import neelakshiPhoto from './assets/judges/neelakshi_soni.png'
+import karanPhoto from './assets/judges/karan_shah.png'
+import dishaPhoto from './assets/judges/disha_patel.png'
 import prospectusPdf from './assets/MarinHacks_Sponsorship_Prospectus.pdf'
 
 const EVENT_DATE = new Date('2026-08-02T08:00:00-08:00')
 
 const schedule = [
-  { time: '8:00 AM', title: 'Check-in', desc: 'Participants arrive and get settled', detail: 'Check in at the entrance of the JPII Student Center. Remember to bring your signed participant waiver. Feel free to get your workspace set up while you wait for the opening ceremony.' },
+  { time: '8:00 AM', title: 'Check-in', desc: 'Arrive and find a seat', detail: 'Check in at the entrance of the JPII Student Center. Remember to bring your signed participant waiver. Feel free to get your workspace set up while you wait for the opening ceremony.' },
   { time: '8:15 AM', title: 'Welcome Presentation', desc: 'Opening remarks and introductions', detail: 'Kick off MarinHacks with opening remarks from the organizing team. We will introduce our staff, sponsors, judges, and walk through everything you need to know for the day.' },
   { time: '8:30 AM', title: 'Theme Reveal & Start', desc: 'Theme announced — hacking begins!', detail: 'The overall theme and track categories will be revealed. Immediately following the announcement, hacking officially begins — good luck!' },
-  { time: '9:00 AM', title: "Nico Zametto's Workshop", desc: 'How to Hackathon', detail: "Nico Zametto — a 4x hackathon winner and winner of a Y Combinator hackathon — will lead an interactive workshop on how to approach and excel at hackathons. Learn how to scope your idea, build efficiently under time pressure, and deliver a compelling demo." },
+  { time: '9:00 AM', title: "Nico Zametto's Workshop", desc: '"How to Hackathon"', detail: "Nico Zametto, 4x hackathon winner and winner of a Y Combinator hackathon, will lead an interactive workshop on how to approach and excel at hackathons. From concept to competition, learn how to scope your idea, build efficiently under time pressure, and deliver a compelling demo." },
   { time: '10:00 AM', title: 'Chess Tournament', desc: 'Step away from the keyboard and compete', detail: 'Need a mental reset? Join our single-elimination blitz chess tournament running throughout the day. Games are 5 minutes each. The winner takes home some MarinHacks swag.' },
-  { time: '12:00 PM', title: 'Lunch', desc: 'Catered lunch break — recharge and connect', detail: 'Take a break and enjoy a catered lunch featuring assorted sandwiches and salad. A great opportunity to step away from your project, meet other participants, and recharge for the afternoon.' },
+  { time: '12:00 PM', title: 'Lunch', desc: 'Catered lunch', detail: 'Take a break and enjoy a catered lunch featuring assorted sandwiches and salad. A great opportunity to step away from your project, meet other participants, and recharge for the afternoon.' },
   { time: '1:00 PM', title: 'Boba Break', desc: 'Complimentary boba courtesy of Sharetea', detail: 'Courtesy of our local sponsor Sharetea, participants who selected a boba drink during registration can pick up their free drink. A small perk to keep the energy going.' },
-  { time: '3:00 PM', title: 'Code this Algorithm', desc: 'Old-school coding challenge — no AI allowed', detail: 'Think you can code without your AI assistant? In this bracket-style competition, go head-to-head against fellow participants to see who can write a correct algorithm the fastest — on paper. A fun reminder that the fundamentals still matter.' },
+  { time: '3:00 PM', title: '"Ditch That Agent!"', desc: 'Old-school coding challenge, no AI allowed', detail: 'Think you can code without your AI assistant? In this bracket-style competition, go head-to-head against fellow participants to see who can write a correct algorithm the fastest - on paper. A fun reminder the fundamentals still matter.' },
   { time: '6:00 PM', title: 'Submissions Due', desc: 'All projects must be submitted by 6:00 PM', detail: 'All projects must be submitted to DevPost by 6:00 PM sharp. Any commits to your repository after the deadline will result in immediate disqualification. You are welcome to continue refining your presentation and demo after submission.' },
   { time: '6:10 PM', title: 'Dinner', desc: 'Pizza served before judging begins', detail: 'Fuel up before you present. Pizza will be served while teams prepare for their judging slots.' },
   { time: '6:30 PM', title: 'Judging Begins', desc: 'Teams present to a panel of judges', detail: 'Teams will be called in scheduled order to present their projects to a panel of three judges. Be prepared to walk through your project, explain your process, and demo what you built.' },
   { time: '7:30 PM', title: 'Geoguessr & Trivia', desc: 'Open activities while results are tallied', detail: 'Hosted by Alex Willard, all participants are welcome to join a Geoguessr tournament and trivia rounds while the judges finalize scores and deliberate on winners.' },
-  { time: '8:00 PM', title: 'Closing Ceremony', desc: 'Winners announced and closing remarks', detail: 'Join us for the closing ceremony as we announce the winners, hand out awards, and wrap up the day. Regardless of the outcome, take pride in what you built — creating something from nothing in 12 hours is no small feat.' },
+  { time: '8:00 PM', title: 'Closing Ceremony', desc: 'Winners announced and closing remarks', detail: 'Join us for the closing ceremony as we announce the winners, hand out awards, and wrap up the day. Regardless of the outcome, take pride in what you built - creating something from nothing in 12 hours is no small feat.' },
 ]
 
 const faqs = [
@@ -43,11 +46,11 @@ const faqs = [
   },
   {
     q: 'What should I bring?',
-    a: 'You should bring a portable laptop, charger, drinks, and snacks. Please do not bring anything too large, ex. External Monitors, 3D Printers. If you have any questions of what to bring, contact us through email or Discord.',
+    a: 'You should bring a portable laptop, charger, drinks, and snacks. Please do not bring anything too large (ex. External Monitors, 3D Printers). If you have any questions of what to bring, contact us through email or Discord.',
   },
   {
     q: 'Can I work alone or do I need a team?',
-    a: 'Yes you can work alone! However, we highly encourage you find and work with a team. You learn many valuable lessons through code collaboration and version control.',
+    a: 'Yes, you can absolutely work alone! However, we highly encourage you find and work with a team. You learn many valuable lessons through code collaboration and version control.',
   },
   {
     q: 'Where is MarinHacks hosted?',
@@ -59,11 +62,11 @@ const faqs = [
   },
   {
     q: "Is there a theme?",
-    a: "Yes, there is a theme and it will be revealed during the opening ceremony. All projects, (even in different tracks), must relate to the theme.",
+    a: "Yes, there is a theme and it will be revealed during the opening ceremony. All projects, even those in different tracks, must relate to the theme.",
   },
   {
     q: "What are the prizes?",
-    a: "Top teams will be awarded Amazon gift cards — $250 for 1st place, $150 for 2nd, and $100 for 3rd. Beyond the overall prizes, each track will feature its own dedicated awards, including research program scholarships and credits from our sponsor companies. All registered participants will receive access to a curated set of sponsor tools throughout the event.",
+    a: "Top teams will be awarded gift cards - $250 for 1st place, $150 for 2nd, and $100 for 3rd. Beyond the overall prizes, each track will feature its own dedicated awards, including research program scholarships and credits from our sponsor companies. All registered participants will receive access to a curated set of sponsor tools throughout the event.",
   }
 ]
 
@@ -82,6 +85,24 @@ const assistantOrganizers = [
 ]
 
 const organizers = []
+
+const judges = [
+  {
+    name: 'Neelakshi Soni',
+    photo: neelakshiPhoto,
+    bio: 'Neelakshi is a Software Engineer at Meta, previously at Amazon, where she has worked on large-scale distributed systems, experimentation platforms, and backend infrastructure. She is passionate about AI infrastructure, developer tooling, scalable systems, and emerging agentic technologies. Based in the Bay Area, she enjoys mentoring builders and helping teams translate ambitious ideas into production-ready systems.',
+  },
+  {
+    name: 'Karan Shah',
+    photo: karanPhoto,
+    bio: 'Karan is a Product Manager with 10 years of experience building high-impact fintech and SaaS products. He has launched multiple products from 0 to 1 and has held product leadership roles at ServiceNow, Flexport, and Bill.com. He holds an M.S. in Computer Science from Rochester Institute of Technology.',
+  },
+  {
+    name: 'Disha Patel',
+    photo: dishaPhoto,
+    bio: 'Disha is a Software Engineer at a leading tech company with experience in machine learning systems and mobile application development. She has published research in large language models and automated system diagnostics, and previously served as an instructor for iOS Mobile Application Development at California State University, Fullerton, where she mentored and evaluated student software projects across multiple semesters.',
+  },
+]
 
 const advisors = [
   { name: 'Mr. Adib', role: 'Faculty Advisor', initials: 'MA' },
@@ -409,15 +430,15 @@ export default function App() {
           <div className={`about-grid reveal${aboutVisible ? ' visible' : ''}`}>
             <div>
               <p className="section-label">About</p>
-              <h2 className="section-title">Build something amazing in 12 hours</h2>
+              <h2 className="section-title">Can you ship in 12 hours?</h2>
               <p className="section-desc">
-                MarinHacks is Marin Catholic's inaugural hackathon — a free, 12-hour event open to
-                middle and high school students across the Bay Area. Come with an idea, leave with
-                a project, and compete for prizes alongside hundreds of fellow builders.
+                MarinHacks is Marin Catholic's first hackathon. Open to middle and high school
+                students across the Bay Area. Come with an idea, leave with a project, and
+                compete for prizes alongside hundreds of fellow builders.
               </p>
               <br />
               <p className="section-desc">
-                We are trying to bring hackathons into Marin County and grow a STEM culture in our community.
+                We are trying to bring hackathons into Marin County and encourage a greater STEM involvement in our community.
 
               </p>
             </div>
@@ -429,10 +450,10 @@ export default function App() {
 
           <div className="about-cards-row">
             {[
-              { title: 'Theme-Based', desc: 'Build projects around a revealed theme which will be announced day of' },
-              { title: 'Catered Food', desc: 'Lunch and dinner provided. Stay fueled and focused all day.' },
-              { title: 'Real Prizes', desc: 'Compete for Amazon gift cards, track-specific awards including scholarships and sponsor credits, and tool access for every participant.' },
-              { title: 'All Skill Levels', desc: 'Beginners welcome. Solo or team. Form groups on the day of the event.' },
+              { title: 'Central Theme', desc: 'Your projects will center around this on-word theme.' },
+              { title: 'Catered Food', desc: 'Lunch and dinner provided. Stay fueled. Stay focused.' },
+              { title: 'Real Prizes', desc: 'Compete for gift cards, track-specific awards including scholarships and sponsor credits, and tool access.' },
+              { title: 'All Skill Levels', desc: 'Beginners welcome. Solo or team. You may form groups day of.' },
             ].map((card, i) => (
               <div className={`about-card reveal${aboutVisible ? ' visible' : ''}`} key={card.title} style={{ transitionDelay: `${300 + i * 100}ms` }}>
                 <h4>{card.title}</h4>
@@ -450,7 +471,7 @@ export default function App() {
             <p className="section-label">Schedule</p>
             <h2 className="section-title">Day of the event</h2>
             <p className="section-desc">
-              A full day of building, learning, and competing. All times are approximate.
+              A full day of building and competing. Get ready.
             </p>
           </div>
           <div className="schedule-layout">
@@ -523,8 +544,7 @@ export default function App() {
               </a>
             </div>
             <p className="section-desc">
-              MarinHacks is made possible by the generous support of our sponsors. We're
-              actively reaching out to more partners — check back soon for additions.
+              MarinHacks is made possible by the generous support of our sponsors.
             </p>
             <div className="sponsor-grid sponsor-grid-centered">
               <a href="https://codecrafters.io/" target="_blank" rel="noreferrer" className="sponsor-card">
@@ -565,14 +585,14 @@ export default function App() {
           <div className={`reveal${sponsorsVisible ? ' visible' : ''}`}>
             <p className="section-label">Judges</p>
             <h2 className="section-title">Meet the judges</h2>
-            <p className="section-desc">
-              Our judging panel will be announced soon. We're bringing in industry professionals
-              to evaluate projects and share feedback with participants.
-            </p>
-            <div className="tbd-placeholder">
-              <div className="tbd-box">
-                <span className="tbd-text">Judges TBD</span>
-              </div>
+            <div className="judges-grid">
+              {judges.map((judge, i) => (
+                <RevealItem key={judge.name} className="judge-card" style={{ transitionDelay: `${i * 100}ms` }}>
+                  <img src={judge.photo} alt={judge.name} className="judge-photo" loading="lazy" decoding="async" />
+                  <h4 className="judge-name">{judge.name}</h4>
+                  <p className="judge-bio">{judge.bio}</p>
+                </RevealItem>
+              ))}
             </div>
           </div>
         </div>
