@@ -826,6 +826,8 @@ section {
 }
 
 .team-assistants {
+  grid-template-columns: repeat(3, minmax(180px, 220px));
+  justify-content: center;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
