@@ -586,15 +586,7 @@ export default function App() {
           <div className={`reveal${sponsorsVisible ? ' visible' : ''}`}>
             <p className="section-label">Judges</p>
             <h2 className="section-title">Meet the judges</h2>
-            <div className="judges-grid">
-              {judges.map((judge, i) => (
-                <RevealItem key={judge.name} className="judge-card" style={{ transitionDelay: `${i * 100}ms` }}>
-                  <img src={judge.photo} alt={judge.name} className="judge-photo" loading="lazy" decoding="async" />
-                  <h4 className="judge-name">{judge.name}</h4>
-                  <p className="judge-bio">{judge.bio}</p>
-                </RevealItem>
-              ))}
-            </div>
+            {/* temp removal */}
           </div>
         </div>
       </section>
