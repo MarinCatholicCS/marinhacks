@@ -5,6 +5,8 @@ import stanley from './assets/stanley.jpg'
 import alex from './assets/alex.jpg'
 import nico from './assets/nico.jpg'
 import marinhacksLogo from './assets/marinhacks.png'
+import coderLogo from './assets/coder.svg'
+import pcbwayLogo from './assets/PCBWay.jpg'
 import codecraftersLogo from './assets/sponsors/codecrafters.svg'
 import wolframLogo from './assets/sponsors/wolfram.png'
 import aopsLogo from './assets/sponsors/aops.png'
@@ -20,11 +22,11 @@ const schedule = [
   { time: '8:00 AM', title: 'Check-in', desc: 'Participants arrive and get settled', detail: 'Check in at the entrance of the JPII Student Center. Remember to bring your signed participant waiver. Feel free to get your workspace set up while you wait for the opening ceremony.' },
   { time: '8:15 AM', title: 'Welcome Presentation', desc: 'Opening remarks and introductions', detail: 'Kick off MarinHacks with opening remarks from the organizing team. We will introduce our staff, sponsors, judges, and walk through everything you need to know for the day.' },
   { time: '8:30 AM', title: 'Theme Reveal & Start', desc: 'Theme announced — hacking begins!', detail: 'The overall theme and track categories will be revealed. Immediately following the announcement, hacking officially begins — good luck!' },
-  { time: '9:00 AM', title: "Nico Zametto's Workshop", desc: 'How to Hackathon', detail: "Nico Zametto — a 4x hackathon winner and winner of a Y Combinator hackathon — will lead an interactive workshop on how to approach and excel at hackathons. Learn how to scope your idea, build efficiently under time pressure, and deliver a compelling demo." },
+  { time: '9:00 AM', title: 'Intro to Vibe Coding', desc: 'Workshop led by Stanley Ho', detail: "Never made an app before? It's 2026 and easier than ever before to ship a project with little to no experience. A pioneer in ML and co-founder of OpenAI, Andrej Karpathy coined the term 'vibe-coding' last year and tweeted that he barely writes hand-written code anymore. Learn how to leverage coding agents to build anything you desire" },
+  { time: '9:30 AM', title: "How to Hackathon", desc: 'Workshop led by Nico Zametto', detail: "Nico Zametto — a 4x hackathon winner and winner of a Y Combinator hackathon — will lead an interactive workshop on how to approach and excel at hackathons. Learn how to scope your idea, build efficiently under time pressure, and deliver a compelling demo." },
   { time: '10:00 AM', title: 'Chess Tournament', desc: 'Step away from the keyboard and compete', detail: 'Need a mental reset? Join our single-elimination blitz chess tournament running throughout the day. Games are 5 minutes each. The winner takes home some MarinHacks swag.' },
   { time: '12:00 PM', title: 'Lunch', desc: 'Catered lunch break — recharge and connect', detail: 'Take a break and enjoy a catered lunch featuring assorted sandwiches and salad. A great opportunity to step away from your project, meet other participants, and recharge for the afternoon.' },
   { time: '1:00 PM', title: 'Boba Break', desc: 'Complimentary boba courtesy of Sharetea', detail: 'Courtesy of our local sponsor Sharetea, participants who selected a boba drink during registration can pick up their free drink. A small perk to keep the energy going.' },
-  { time: '3:00 PM', title: 'Code this Algorithm', desc: 'Old-school coding challenge — no AI allowed', detail: 'Think you can code without your AI assistant? In this bracket-style competition, go head-to-head against fellow participants to see who can write a correct algorithm the fastest — on paper. A fun reminder that the fundamentals still matter.' },
   { time: '6:00 PM', title: 'Submissions Due', desc: 'All projects must be submitted by 6:00 PM', detail: 'All projects must be submitted to DevPost by 6:00 PM sharp. Any commits to your repository after the deadline will result in immediate disqualification. You are welcome to continue refining your presentation and demo after submission.' },
   { time: '6:10 PM', title: 'Dinner', desc: 'Pizza served before judging begins', detail: 'Fuel up before you present. Pizza will be served while teams prepare for their judging slots.' },
   { time: '6:30 PM', title: 'Judging Begins', desc: 'Teams present to a panel of judges', detail: 'Teams will be called in scheduled order to present their projects to a panel of three judges. Be prepared to walk through your project, explain your process, and demo what you built.' },
@@ -527,6 +529,12 @@ export default function App() {
               actively reaching out to more partners — check back soon for additions.
             </p>
             <div className="sponsor-grid sponsor-grid-centered">
+              <a href="https://coder.com/" target="_blank" rel="noreferrer" className="sponsor-card">
+                <img src={coderLogo} alt="Coder" className="sponsor-logo" loading="lazy" decoding="async" />
+              </a>
+              <a href="https://www.pcbway.com/" target="_blank" rel="noreferrer" className="sponsor-card">
+                <img src={pcbwayLogo} alt="PCBWay" className="sponsor-logo" loading="lazy" decoding="async" />
+              </a>
               <a href="https://codecrafters.io/" target="_blank" rel="noreferrer" className="sponsor-card">
                 <img src={codecraftersLogo} alt="CodeCrafters" className="sponsor-logo" loading="lazy" decoding="async" />
               </a>
