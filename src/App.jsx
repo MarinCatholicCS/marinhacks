@@ -14,6 +14,7 @@ import hackpilotLogo from './assets/sponsors/hackpilot.png'
 import yriLogo from './assets/sponsors/yri.jpg'
 import xyzLogo from './assets/sponsors/xyz-logo-color.png'
 import mastraLogo from './assets/sponsors/mastra.svg'
+import marinSonomaLogo from './assets/marinsonoma.webp'
 import prospectusPdf from './assets/MarinHacks_Sponsorship_Prospectus.pdf'
 
 const EVENT_DATE = new Date('2026-08-02T08:00:00-08:00')
@@ -529,6 +530,9 @@ export default function App() {
               actively reaching out to more partners — check back soon for additions.
             </p>
             <div className="sponsor-grid sponsor-grid-centered">
+              <a href="https://www.msivfund.com/" target="_blank" rel="noreferrer" className="sponsor-card">
+                <img src={marinSonomaLogo} alt="Marin Sonoma" className="sponsor-logo" loading="lazy" decoding="async" />
+              </a>
               <a href="https://coder.com/" target="_blank" rel="noreferrer" className="sponsor-card">
                 <img src={coderLogo} alt="Coder" className="sponsor-logo" loading="lazy" decoding="async" />
               </a>
