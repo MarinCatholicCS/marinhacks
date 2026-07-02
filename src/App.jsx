@@ -14,6 +14,7 @@ import hackpilotLogo from './assets/sponsors/hackpilot.png'
 import yriLogo from './assets/sponsors/yri.jpg'
 import xyzLogo from './assets/sponsors/xyz-logo-color.png'
 import mastraLogo from './assets/sponsors/mastra.svg'
+import bankOfMarinLogo from './assets/sponsors/bank_of_marin.jfif'
 import marinSonomaLogo from './assets/marinsonoma.webp'
 import prospectusPdf from './assets/MarinHacks_Sponsorship_Prospectus.pdf'
 
@@ -397,7 +398,7 @@ export default function App() {
           <span className="stat-label">Participants</span>
         </div>
         <div className="stat" style={{ transitionDelay: '200ms' }}>
-          <span className="stat-number"><AnimatedNumber value="$1000" suffix="+" /></span>
+          <span className="stat-number"><AnimatedNumber value="$2500" suffix="+" /></span>
           <span className="stat-label">In Prizes</span>
         </div>
         <div className="stat" style={{ transitionDelay: '300ms' }}>
@@ -529,6 +530,13 @@ export default function App() {
               MarinHacks is made possible by the generous support of our sponsors. We're
               actively reaching out to more partners — check back soon for additions.
             </p>
+            <h3 className="sponsor-tier-title">Lead Sponsor</h3>
+            <div className="sponsor-grid sponsor-grid-centered">
+              <a href="https://www.bankofmarin.com/" target="_blank" rel="noreferrer" className="sponsor-card sponsor-card-lead">
+                <img src={bankOfMarinLogo} alt="Bank of Marin" className="sponsor-logo sponsor-logo-lead" loading="lazy" decoding="async" />
+              </a>
+            </div>
+            <h3 className="sponsor-tier-title">General Sponsors</h3>
             <div className="sponsor-grid sponsor-grid-centered">
               <a href="https://www.msivfund.com/" target="_blank" rel="noreferrer" className="sponsor-card">
                 <img src={marinSonomaLogo} alt="Marin Sonoma" className="sponsor-logo" loading="lazy" decoding="async" />
@@ -539,6 +547,9 @@ export default function App() {
               <a href="https://www.pcbway.com/" target="_blank" rel="noreferrer" className="sponsor-card">
                 <img src={pcbwayLogo} alt="PCBWay" className="sponsor-logo" loading="lazy" decoding="async" />
               </a>
+            </div>
+            <h3 className="sponsor-tier-title">Support Sponsors</h3>
+            <div className="sponsor-grid sponsor-grid-centered">
               <a href="https://codecrafters.io/" target="_blank" rel="noreferrer" className="sponsor-card">
                 <img src={codecraftersLogo} alt="CodeCrafters" className="sponsor-logo" loading="lazy" decoding="async" />
               </a>
@@ -559,12 +570,6 @@ export default function App() {
               </a>
               <a href="https://mastra.ai/" target="_blank" rel="noreferrer" className="sponsor-card">
                 <img src={mastraLogo} alt="Mastra" className="sponsor-logo" style={{ maxWidth: '130px' }} loading="lazy" decoding="async" />
-              </a>
-              <a href="mailto:marinhacksofficial@gmail.com" className="sponsor-card sponsor-card-cta">
-                <div className="sponsor-cta-inner">
-                  <span className="sponsor-cta-label">Your Company</span>
-                  <span className="sponsor-cta-sub">Become a sponsor</span>
-                </div>
               </a>
             </div>
           </div>

@@ -1018,6 +1018,33 @@ section {
   width: 280px;
 }
 
+.sponsor-tier-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent-light);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.sponsor-tier-title + .sponsor-grid {
+  margin-top: 1.25rem;
+}
+
+.sponsor-grid-centered .sponsor-card-lead {
+  width: 100%;
+  max-width: 888px;
+  min-height: 180px;
+}
+
+.sponsor-card-lead .sponsor-logo-lead {
+  width: 100%;
+  max-width: 100%;
+  max-height: none;
+}
+
 .sponsor-card {
   background: var(--card-bg);
   border: 1px solid rgba(37, 99, 235, 0.2);
