@@ -67,7 +67,7 @@ const faqs = [
   },
   {
     q: "What are the prizes?",
-    a: "Top teams will be awarded Amazon gift cards — $250 for 1st place, $150 for 2nd, and $100 for 3rd. Beyond the overall prizes, each track will feature its own dedicated awards, including research program scholarships and credits from our sponsor companies. All registered participants will receive access to a curated set of sponsor tools throughout the event.",
+    a: "Prizes are being decided at this current moment. If you are wondering about what they are, ask about them in the discord. For overall winners, expect hundreds of dollars worth of visa gift cards and for track winners, expect hardware tech, AI credits, and swag. All participants will also have the chance of winning research program scholarships from YRI and VC grants.",
   }
 ]
 
