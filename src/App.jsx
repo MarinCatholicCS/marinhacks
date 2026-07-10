@@ -15,6 +15,7 @@ import yriLogo from './assets/sponsors/yri.jpg'
 import xyzLogo from './assets/sponsors/xyz-logo-color.png'
 import mastraLogo from './assets/sponsors/mastra.svg'
 import bankOfMarinLogo from './assets/sponsors/bank_of_marin.jfif'
+import marinItLogo from './assets/sponsors/marinit.png'
 import marinSonomaLogo from './assets/marinsonoma.webp'
 import prospectusPdf from './assets/MarinHacks_Sponsorship_Prospectus.pdf'
 
@@ -537,7 +538,7 @@ export default function App() {
               </a>
             </div>
             <h3 className="sponsor-tier-title">General Sponsors</h3>
-            <div className="sponsor-grid sponsor-grid-centered">
+            <div className="sponsor-grid sponsor-grid-centered sponsor-grid-general">
               <a href="https://www.msivfund.com/" target="_blank" rel="noreferrer" className="sponsor-card">
                 <img src={marinSonomaLogo} alt="Marin Sonoma" className="sponsor-logo" loading="lazy" decoding="async" />
               </a>
@@ -546,6 +547,9 @@ export default function App() {
               </a>
               <a href="https://www.pcbway.com/" target="_blank" rel="noreferrer" className="sponsor-card">
                 <img src={pcbwayLogo} alt="PCBWay" className="sponsor-logo" loading="lazy" decoding="async" />
+              </a>
+              <a href="https://www.marinit.com/" target="_blank" rel="noreferrer" className="sponsor-card">
+                <img src={marinItLogo} alt="Marin IT" className="sponsor-logo" loading="lazy" decoding="async" />
               </a>
             </div>
             <h3 className="sponsor-tier-title">Support Sponsors</h3>

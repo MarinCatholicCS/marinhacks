@@ -1035,8 +1035,17 @@ section {
 
 .sponsor-grid-centered .sponsor-card-lead {
   width: 100%;
-  max-width: 888px;
   min-height: 180px;
+}
+
+.sponsor-grid-general .sponsor-card {
+  width: calc((100% - 4.5rem) / 4);
+}
+
+@media (max-width: 900px) {
+  .sponsor-grid-general .sponsor-card {
+    width: 280px;
+  }
 }
 
 .sponsor-card-lead .sponsor-logo-lead {
