@@ -653,6 +653,214 @@ section {
 }
 
 /* ══════════════════════════════════════
+   PRIZES
+   ══════════════════════════════════════ */
+.prizes-section {
+  background: var(--bg-section);
+}
+
+.prize-podium {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+  align-items: end;
+}
+
+.prize-podium-card {
+  background: var(--card-bg);
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.06);
+}
+
+.prize-podium-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 34px rgba(37, 99, 235, 0.14);
+}
+
+.prize-gold {
+  order: 2;
+  padding-top: 2.75rem;
+  padding-bottom: 2.75rem;
+  border-color: rgba(234, 179, 8, 0.4);
+  background: linear-gradient(160deg, rgba(234, 179, 8, 0.08) 0%, var(--card-bg) 55%);
+  box-shadow: 0 8px 28px rgba(234, 179, 8, 0.18);
+}
+
+.prize-silver {
+  order: 1;
+  border-color: rgba(148, 163, 184, 0.4);
+}
+
+.prize-bronze {
+  order: 3;
+  border-color: rgba(180, 116, 66, 0.35);
+}
+
+.prize-rank {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+.prize-gold .prize-rank {
+  color: #ca8a04;
+  font-size: 0.95rem;
+}
+
+.prize-silver .prize-rank {
+  color: #64748b;
+}
+
+.prize-bronze .prize-rank {
+  color: #b4743e;
+}
+
+.prize-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.prize-cash {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--accent);
+  letter-spacing: -0.5px;
+  margin-bottom: 0.4rem;
+}
+
+.prize-gold .prize-cash {
+  font-size: 2.5rem;
+  color: #ca8a04;
+}
+
+.prize-perk {
+  font-size: 0.85rem;
+  color: var(--gray);
+  line-height: 1.5;
+}
+
+.prize-categories {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.prize-category-card {
+  background: var(--card-bg);
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.06);
+}
+
+.prize-category-card:hover {
+  border-color: rgba(37, 99, 235, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.12);
+}
+
+.prize-category-card h4 {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+}
+
+.prize-category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.prize-category-list li {
+  font-size: 0.85rem;
+  color: var(--gray);
+  line-height: 1.5;
+}
+
+.prize-perks {
+  margin-top: 2.5rem;
+  background: var(--card-bg);
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  border-radius: 16px;
+  padding: 1.75rem;
+  text-align: center;
+}
+
+.prize-perks-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.prize-perks-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.prize-perk-chip {
+  background: var(--bg-section);
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  color: var(--gray);
+}
+
+.prize-winners-note {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--gray);
+  text-align: center;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.prize-winners-note a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.prize-winners-note a:hover {
+  text-decoration: underline;
+}
+
+.prize-note {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--gray);
+  text-align: center;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ══════════════════════════════════════
    SCHEDULE
    ══════════════════════════════════════ */
 .schedule-section {
@@ -1346,6 +1554,22 @@ footer {
   }
 
   .about-cards-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .prize-podium {
+    grid-template-columns: 1fr;
+  }
+
+  .prize-gold,
+  .prize-silver,
+  .prize-bronze {
+    order: initial;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .prize-categories {
     grid-template-columns: 1fr 1fr;
   }
 

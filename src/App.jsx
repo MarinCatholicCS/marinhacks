@@ -27,11 +27,10 @@ const schedule = [
   { time: '8:30 AM', title: 'Theme Reveal & Start', desc: 'Theme announced — hacking begins!', detail: 'The overall theme and track categories will be revealed. Immediately following the announcement, hacking officially begins — good luck!' },
   { time: '9:00 AM', title: 'Intro to Vibe Coding', desc: 'Workshop led by Stanley Ho', detail: "Never made an app before? It's 2026 and easier than ever before to ship a project with little to no experience. A pioneer in ML and co-founder of OpenAI, Andrej Karpathy coined the term 'vibe-coding' last year and tweeted that he barely writes hand-written code anymore. Learn how to leverage coding agents to build anything you desire" },
   { time: '9:30 AM', title: "How to Hackathon", desc: 'Workshop led by Nico Zametto', detail: "Nico Zametto — a 4x hackathon winner and winner of a Y Combinator hackathon — will lead an interactive workshop on how to approach and excel at hackathons. Learn how to scope your idea, build efficiently under time pressure, and deliver a compelling demo." },
-  { time: '10:00 AM', title: 'Chess Tournament', desc: 'Step away from the keyboard and compete', detail: 'Need a mental reset? Join our single-elimination blitz chess tournament running throughout the day. Games are 5 minutes each. The winner takes home some MarinHacks swag.' },
-  { time: '12:00 PM', title: 'Lunch', desc: 'Catered lunch break — recharge and connect', detail: 'Take a break and enjoy a catered lunch featuring assorted sandwiches and salad. A great opportunity to step away from your project, meet other participants, and recharge for the afternoon.' },
+  { time: '12:00 PM', title: 'Lunch', desc: 'Catered pizza lunch — recharge and connect', detail: 'Take a break and enjoy catered pizza for lunch. A great opportunity to step away from your project, meet other participants, and recharge for the afternoon.' },
   { time: '1:00 PM', title: 'Boba Break', desc: 'Complimentary boba courtesy of Sharetea', detail: 'Courtesy of our local sponsor Sharetea, participants who selected a boba drink during registration can pick up their free drink. A small perk to keep the energy going.' },
   { time: '6:00 PM', title: 'Submissions Due', desc: 'All projects must be submitted by 6:00 PM', detail: 'All projects must be submitted to DevPost by 6:00 PM sharp. Any commits to your repository after the deadline will result in immediate disqualification. You are welcome to continue refining your presentation and demo after submission.' },
-  { time: '6:10 PM', title: 'Dinner', desc: 'Pizza served before judging begins', detail: 'Fuel up before you present. Pizza will be served while teams prepare for their judging slots.' },
+  { time: '6:10 PM', title: 'Dinner', desc: 'Panda Express served before judging begins', detail: 'Fuel up before you present. Panda Express will be served while teams prepare for their judging slots.' },
   { time: '6:30 PM', title: 'Judging Begins', desc: 'Teams present to a panel of judges', detail: 'Teams will be called in scheduled order to present their projects to a panel of three judges. Be prepared to walk through your project, explain your process, and demo what you built.' },
   { time: '7:30 PM', title: 'Geoguessr & Trivia', desc: 'Open activities while results are tallied', detail: 'Hosted by Alex Willard, all participants are welcome to join a Geoguessr tournament and trivia rounds while the judges finalize scores and deliberate on winners.' },
   { time: '8:00 PM', title: 'Closing Ceremony', desc: 'Winners announced and closing remarks', detail: 'Join us for the closing ceremony as we announce the winners, hand out awards, and wrap up the day. Regardless of the outcome, take pride in what you built — creating something from nothing in 12 hours is no small feat.' },
@@ -68,7 +67,7 @@ const faqs = [
   },
   {
     q: "What are the prizes?",
-    a: "Prizes are being decided at this current moment. If you are wondering about what they are, ask about them in the discord. For overall winners, expect hundreds of dollars worth of visa gift cards and for track winners, expect hardware tech, AI credits, and swag. All participants will also have the chance of winning research program scholarships from YRI and VC grants.",
+    a: "First place gets $500 and a 2 year Code Crafter subscription, second place gets $300 and a 1 year Code Crafter subscription, and third place gets $200 and a 6 month Code Crafter subscription. Best Solo Prize gets an Amazon Alexa, $50, and swag, and Best Beginner gets $100, a $100 AOPS coupon, and Google AI swag. Mystery Track One and Mystery Track Two each get $100. Every submitted project also receives Wolfram Plus trials, MarinHacks & Coder merch (t-shirts, stickers, toys, and hoodies), a free domain name, OpenAI project credits, and an AI agent book. Track and overall winners will also be considered for YRI Fellowship research scholarships, VC grants, and PCBWay coupons. These tracks and prize amounts are not yet final — we're working on making them worth even more.",
   }
 ]
 
@@ -303,6 +302,7 @@ export default function App() {
   const [heroRef, heroVisible] = useReveal(0.1)
   const [statsRef, statsVisible] = useReveal(0.2)
   const [aboutRef, aboutVisible] = useReveal(0.1)
+  const [prizesRef, prizesVisible] = useReveal(0.1)
   const [schedRef, schedVisible] = useReveal(0.1)
   const [teamRef, teamVisible] = useReveal(0.1)
   const [sponsorsRef, sponsorsVisible] = useReveal(0.1)
@@ -332,13 +332,14 @@ export default function App() {
         <div className="nav-logo"><img src={marinhacksLogo} alt="MarinHacks" className="nav-logo-img" /></div>
         <ul className="nav-links">
           <li><a href="#about">About</a></li>
+          <li><a href="#prizes">Prizes</a></li>
           <li><a href="#schedule">Schedule</a></li>
           <li><a href="#team">Team</a></li>
           <li><a href="#sponsors">Sponsors</a></li>
           <li><a href="#judges">Judges</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="https://hcb.hackclub.com/donations/start/marinhacks" target="_blank" rel="noreferrer" className="nav-donate">Donate</a></li>
-          <li><a href="https://forms.gle/5eGxKWadr2QK13Lb7" target="_blank" rel="noreferrer" className="nav-cta">Apply Now</a></li>
+          <li><a href="https://forms.gle/J4gnhbYSvcsPfxUf8" target="_blank" rel="noreferrer" className="nav-cta">Fill the Waiver!</a></li>
         </ul>
       </nav>
 
@@ -378,8 +379,8 @@ export default function App() {
           </div>
 
           <div className="hero-btns">
-            <a href="https://forms.gle/5eGxKWadr2QK13Lb7" target="_blank" rel="noreferrer" className="btn-primary">
-              Apply Now
+            <a href="https://forms.gle/J4gnhbYSvcsPfxUf8" target="_blank" rel="noreferrer" className="btn-primary">
+              Fill the Waiver!
             </a>
             <a href="https://discord.gg/apMVepA7fK" target="_blank" rel="noreferrer" className="btn-secondary">
               Join our Discord
@@ -445,6 +446,64 @@ export default function App() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* PRIZES */}
+      <section id="prizes" className="prizes-section">
+        <div className="container" ref={prizesRef}>
+          <div className={`reveal${prizesVisible ? ' visible' : ''}`}>
+            <p className="section-label">Prizes</p>
+            <h2 className="section-title">Get Rewarded for Your Project</h2>
+            <p className="section-desc">
+              After you finish, you will present in front of judges who will decide the following track winners
+            </p>
+          </div>
+
+          <div className="prize-podium">
+            {[
+              { place: '2nd', title: 'Second Place', cash: '$300', perk: '1 Year Code Crafter Subscription', tier: 'silver' },
+              { place: '1st', title: 'First Place', cash: '$500', perk: '2 Year Code Crafter Subscription', tier: 'gold' },
+              { place: '3rd', title: 'Third Place', cash: '$200', perk: '6 Month Code Crafter Subscription', tier: 'bronze' },
+            ].map((p, i) => (
+              <div
+                key={p.place}
+                className={`prize-podium-card prize-${p.tier} reveal${prizesVisible ? ' visible' : ''}`}
+                style={{ transitionDelay: `${i * 100}ms` }}
+              >
+                <div className="prize-rank">{p.place}</div>
+                <h3 className="prize-title">{p.title}</h3>
+                <div className="prize-cash">{p.cash}</div>
+                <p className="prize-perk">{p.perk}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="prize-categories">
+            {[
+              { title: 'Best Solo Prize', items: ['$50', 'Amazon Alexa', 'Swag'] },
+              { title: 'Best Beginner', items: ['$100', '$100 AOPS Coupon', 'Google AI Swag'] },
+              { title: 'Mystery Track One', items: ['$100', 'Mystery Prize?'] },
+              { title: 'Mystery Track Two', items: ['$100', 'Mystery Prize?'] },
+            ].map((cat, i) => (
+              <div
+                key={cat.title}
+                className={`prize-category-card reveal${prizesVisible ? ' visible' : ''}`}
+                style={{ transitionDelay: `${400 + i * 100}ms` }}
+              >
+                <h4>{cat.title}</h4>
+                <ul className="prize-category-list">
+                  {cat.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <p className={`prize-note reveal${prizesVisible ? ' visible' : ''}`} style={{ transitionDelay: '800ms' }}>
+            Note: these tracks and prize amounts are not yet final. We're working on making them worth even more. In addition, all cash prizes listed above will be given in the form of Amazon Gift Cards. Stay tuned for updates!
+          </p>
         </div>
       </section>
 
@@ -630,7 +689,7 @@ export default function App() {
             Spots are limited. Sign up to secure your place at MarinHacks and be the first to hear
             about the theme, sponsors, and updates. More details to come.
           </p>
-          <a href="https://forms.gle/5eGxKWadr2QK13Lb7" target="_blank" rel="noreferrer" className="btn-primary btn-glow">Apply Now</a>
+          <a href="https://forms.gle/J4gnhbYSvcsPfxUf8" target="_blank" rel="noreferrer" className="btn-primary btn-glow">Fill the Waiver!</a>
         </div>
       </section>
       </main>
