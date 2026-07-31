@@ -5,18 +5,18 @@ import stanley from './assets/stanley.jpg'
 import alex from './assets/alex.jpg'
 import nico from './assets/nico.jpg'
 import marinhacksLogo from './assets/marinhacks.png'
-import coderLogo from './assets/coder.svg'
-import pcbwayLogo from './assets/PCBWay.jpg'
+import coderLogo from './assets/sponsors/coder.svg'
+import pcbwayLogo from './assets/sponsors/PCBWay.jpg'
 import codecraftersLogo from './assets/sponsors/codecrafters.svg'
 import wolframLogo from './assets/sponsors/wolfram.png'
 import aopsLogo from './assets/sponsors/aops.png'
-import hackpilotLogo from './assets/sponsors/hackpilot.png'
+import monetLogo from './assets/sponsors/monet.png'
 import yriLogo from './assets/sponsors/yri.jpg'
 import xyzLogo from './assets/sponsors/xyz-logo-color.png'
 import mastraLogo from './assets/sponsors/mastra.svg'
 import bankOfMarinLogo from './assets/sponsors/bank_of_marin.jfif'
 import marinItLogo from './assets/sponsors/marinit.png'
-import marinSonomaLogo from './assets/marinsonoma.webp'
+import marinSonomaLogo from './assets/sponsors/marinsonoma.webp'
 import prospectusPdf from './assets/MarinHacks_Sponsorship_Prospectus.pdf'
 
 const EVENT_DATE = new Date('2026-08-02T08:00:00-08:00')
@@ -34,6 +34,16 @@ const schedule = [
   { time: '6:30 PM', title: 'Judging Begins', desc: 'Teams present to a panel of judges', detail: 'Teams will be called in scheduled order to present their projects to a panel of three judges. Be prepared to walk through your project, explain your process, and demo what you built.' },
   { time: '7:30 PM', title: 'Geoguessr & Trivia', desc: 'Open activities while results are tallied', detail: 'Hosted by Alex Willard, all participants are welcome to join a Geoguessr tournament and trivia rounds while the judges finalize scores and deliberate on winners.' },
   { time: '8:00 PM', title: 'Closing Ceremony', desc: 'Winners announced and closing remarks', detail: 'Join us for the closing ceremony as we announce the winners, hand out awards, and wrap up the day. Regardless of the outcome, take pride in what you built — creating something from nothing in 12 hours is no small feat.' },
+]
+
+const judges = [
+  { name: 'Disha Patel', title: 'Software Engineer', company: 'Apple' },
+  { name: 'Preyansh Shah', title: 'Senior Engineering Manager', company: 'Cisco' },
+  { name: 'Karan Shah', title: 'Product Manager', company: 'Intuit' },
+  { name: 'Flavia Wortsman', title: 'Senior Manager', company: 'Meta' },
+  { name: 'Brajesh Shrivastava', title: 'Senior Staff Engineer', company: 'Nutanix' },
+  { name: 'Ruide Zhu', title: 'Founding Engineer', company: 'Andromede AI' },
+  { name: 'Danielle Strachman', title: 'General Partner', company: '1517' },
 ]
 
 const faqs = [
@@ -67,7 +77,7 @@ const faqs = [
   },
   {
     q: "What are the prizes?",
-    a: "First place gets $500 and a 2 year Code Crafter subscription, second place gets $300 and a 1 year Code Crafter subscription, and third place gets $200 and a 6 month Code Crafter subscription. Best Solo Prize gets an Amazon Alexa, $50, and swag, and Best Beginner gets $100, a $100 AOPS coupon, and Google AI swag. Mystery Track One and Mystery Track Two each get $100. Every submitted project also receives Wolfram Plus trials, MarinHacks & Coder merch (t-shirts, stickers, toys, and hoodies), a free domain name, OpenAI project credits, and an AI agent book. Track and overall winners will also be considered for YRI Fellowship research scholarships, VC grants, and PCBWay coupons. These tracks and prize amounts are not yet final — we're working on making them worth even more.",
+    a: "First place gets $500, a 2 year Code Crafter subscription, and a $50 PCBWay coupon, second place gets $300, a 1 year Code Crafter subscription, and a $50 PCBWay coupon, and third place gets $200, a 6 month Code Crafter subscription, and a $50 PCBWay coupon. Best Solo Prize gets an Amazon Alexa, and Best Beginner gets Arduino Starter Kits. Mystery Track One and Mystery Track Two each get a mystery prize. Every submitted project also receives Wolfram Plus trials, MarinHacks & Coder merch (t-shirts, stickers, toys, and hoodies), a free domain name, OpenAI project credits, and an AI agent book. Track and overall winners will also be considered for YRI Fellowship research scholarships, VC grants, and PCBWay coupons. These tracks and prize amounts are not yet final — we're working on making them worth even more.",
   }
 ]
 
@@ -462,29 +472,29 @@ export default function App() {
 
           <div className="prize-podium">
             {[
-              { place: '2nd', title: 'Second Place', cash: '$300', perk: '1 Year Code Crafter Subscription', tier: 'silver' },
-              { place: '1st', title: 'First Place', cash: '$500', perk: '2 Year Code Crafter Subscription', tier: 'gold' },
-              { place: '3rd', title: 'Third Place', cash: '$200', perk: '6 Month Code Crafter Subscription', tier: 'bronze' },
+              { place: '2nd', title: 'Second Place', cash: '$300', perk: '1 Year Code Crafter Subscription', coupon: '$50 PCBWay Coupon', tier: 'silver' },
+              { place: '1st', title: 'First Place', cash: '$500', perk: '2 Year Code Crafter Subscription', coupon: '$50 PCBWay Coupon', tier: 'gold' },
+              { place: '3rd', title: 'Third Place', cash: '$200', perk: '6 Month Code Crafter Subscription', coupon: '$50 PCBWay Coupon', tier: 'bronze' },
             ].map((p, i) => (
               <div
                 key={p.place}
                 className={`prize-podium-card prize-${p.tier} reveal${prizesVisible ? ' visible' : ''}`}
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
-                <div className="prize-rank">{p.place}</div>
                 <h3 className="prize-title">{p.title}</h3>
                 <div className="prize-cash">{p.cash}</div>
                 <p className="prize-perk">{p.perk}</p>
+                <p className="prize-perk">{p.coupon}</p>
               </div>
             ))}
           </div>
 
           <div className="prize-categories">
             {[
-              { title: 'Best Solo Prize', items: ['$50', 'Amazon Alexa', 'Swag'] },
-              { title: 'Best Beginner', items: ['$100', '$100 AOPS Coupon', 'Google AI Swag'] },
-              { title: 'Mystery Track One', items: ['$100', 'Mystery Prize?'] },
-              { title: 'Mystery Track Two', items: ['$100', 'Mystery Prize?'] },
+              { title: 'Best Solo Prize', items: ['Amazon Alexa'] },
+              { title: 'Best Beginner', items: ['Arduino Starter Kits'] },
+              { title: 'Mystery Track One', items: ['Mystery Prize?'] },
+              { title: 'Mystery Track Two', items: ['Mystery Prize?'] },
             ].map((cat, i) => (
               <div
                 key={cat.title}
@@ -590,7 +600,7 @@ export default function App() {
               MarinHacks is made possible by the generous support of our sponsors. We're
               actively reaching out to more partners — check back soon for additions.
             </p>
-            <h3 className="sponsor-tier-title">Lead Sponsor</h3>
+            <h3 className="sponsor-tier-title">Partner Sponsor</h3>
             <div className="sponsor-grid sponsor-grid-centered">
               <a href="https://www.bankofmarin.com/" target="_blank" rel="noreferrer" className="sponsor-card sponsor-card-lead">
                 <img src={bankOfMarinLogo} alt="Bank of Marin" className="sponsor-logo sponsor-logo-lead" loading="lazy" decoding="async" />
@@ -610,9 +620,12 @@ export default function App() {
               <a href="https://www.marinit.com/" target="_blank" rel="noreferrer" className="sponsor-card">
                 <img src={marinItLogo} alt="Marin IT" className="sponsor-logo" loading="lazy" decoding="async" />
               </a>
+              <a href="https://www.yriscience.com/" target="_blank" rel="noreferrer" className="sponsor-card">
+                <img src={yriLogo} alt="YRI" className="sponsor-logo" loading="lazy" decoding="async" />
+              </a>
             </div>
             <h3 className="sponsor-tier-title">Support Sponsors</h3>
-            <div className="sponsor-grid sponsor-grid-centered">
+            <div className="sponsor-grid sponsor-grid-centered sponsor-grid-support">
               <a href="https://codecrafters.io/" target="_blank" rel="noreferrer" className="sponsor-card">
                 <img src={codecraftersLogo} alt="CodeCrafters" className="sponsor-logo" loading="lazy" decoding="async" />
               </a>
@@ -622,11 +635,8 @@ export default function App() {
               <a href="https://artofproblemsolving.com/" target="_blank" rel="noreferrer" className="sponsor-card">
                 <img src={aopsLogo} alt="Art of Problem Solving" className="sponsor-logo" loading="lazy" decoding="async" />
               </a>
-              <a href="https://www.hackpilot.io/" target="_blank" rel="noreferrer" className="sponsor-card">
-                <img src={hackpilotLogo} alt="HackPilot" className="sponsor-logo" loading="lazy" decoding="async" />
-              </a>
-              <a href="https://www.yriscience.com/" target="_blank" rel="noreferrer" className="sponsor-card">
-                <img src={yriLogo} alt="YRI" className="sponsor-logo" loading="lazy" decoding="async" />
+              <a href="https://www.monet.gg/" target="_blank" rel="noreferrer" className="sponsor-card">
+                <img src={monetLogo} alt="Monet" className="sponsor-logo" loading="lazy" decoding="async" />
               </a>
               <a href="https://gen.xyz/" target="_blank" rel="noreferrer" className="sponsor-card">
                 <img src={xyzLogo} alt=".XYZ" className="sponsor-logo" loading="lazy" decoding="async" />
@@ -646,13 +656,15 @@ export default function App() {
             <p className="section-label">Judges</p>
             <h2 className="section-title">Meet the judges</h2>
             <p className="section-desc">
-              Our judging panel will be announced soon. We're bringing in industry professionals
-              to evaluate projects and share feedback with participants.
+              Meet the industry professionals evaluating projects and sharing feedback with participants.
             </p>
-            <div className="tbd-placeholder">
-              <div className="tbd-box">
-                <span className="tbd-text">Judges TBD</span>
-              </div>
+            <div className="judges-grid">
+              {judges.map((judge) => (
+                <div className="judge-card" key={judge.name}>
+                  <h3 className="judge-name">{judge.name}</h3>
+                  <p className="judge-title">{judge.title} <span className="judge-company">@ {judge.company}</span></p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
