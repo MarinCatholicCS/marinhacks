@@ -368,6 +368,24 @@
   transform: translateY(-2px);
 }
 
+/* Secondary link under a card's main action */
+.hk-card-aside {
+  margin-top: 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--gray);
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: rgba(37, 99, 235, 0.35);
+  transition: color 0.2s;
+}
+
+.hk-card-aside:hover {
+  color: var(--accent);
+}
+
 /* ── Promo code chip ───────────────────────────────────────── */
 .hk-code {
   display: flex;

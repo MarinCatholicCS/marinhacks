@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import './HackathonPage.css'
+import xyzGuidePdf from './assets/xyz.pdf'
 
 /* Event day is August 2, 2026 — Pacific Daylight Time (UTC−7).
    Every time below is pinned to that offset so the countdown reads the same
@@ -338,6 +339,9 @@ export default function HackathonPage() {
                   spaces.
                 </p>
                 <PromoCode code={DOMAIN_PROMO} />
+                <a href={xyzGuidePdf} target="_blank" rel="noreferrer" className="hk-card-aside">
+                  Step-by-step redemption guide (PDF)
+                </a>
               </div>
             </div>
           </div>
