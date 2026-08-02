@@ -261,11 +261,31 @@ export default function HackathonPage() {
         <section id="details" className="hk-section">
           <div className="hk-container">
             <div className="hk-announce">
-              <span className="hk-eyebrow">Announcement</span>
-              <p className="hk-announce-body">
-                MarinHacks merchandise and sponsor swag are out in the <strong>front area</strong>.
-                Come grab yours whenever you need a break from your project.
-              </p>
+              <span className="hk-eyebrow">Announcements</span>
+              <ul className="hk-announce-list">
+                <li className="hk-announce-item">
+                  <span className="hk-announce-label">Theme</span>
+                  <p className="hk-announce-body">
+                    The theme is <strong>Safety</strong>. Every project must relate to it, including
+                    those in a track.
+                  </p>
+                </li>
+                <li className="hk-announce-item">
+                  <span className="hk-announce-label">Wi-Fi</span>
+                  <p className="hk-announce-body">
+                    Network <span className="hk-cred">marinhacks</span>, password{' '}
+                    <span className="hk-cred">Zametto!</span> — the exclamation mark is part of the
+                    password.
+                  </p>
+                </li>
+                <li className="hk-announce-item">
+                  <span className="hk-announce-label">Merch &amp; swag</span>
+                  <p className="hk-announce-body">
+                    MarinHacks merchandise and sponsor swag are out in the front area. Come grab
+                    yours whenever you need a break from your project.
+                  </p>
+                </li>
+              </ul>
             </div>
 
             <p className="hk-eyebrow hk-section-eyebrow">Details</p>

@@ -239,6 +239,36 @@
   border-radius: var(--radius-md);
 }
 
+.hk-announce-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.hk-announce-item {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 1.25rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid rgba(37, 99, 235, 0.18);
+}
+
+.hk-announce-item:first-child {
+  border-top: none;
+  padding-top: 0.35rem;
+}
+
+.hk-announce-item:last-child {
+  padding-bottom: 0.35rem;
+}
+
+.hk-announce-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.6;
+  color: var(--accent);
+}
+
 .hk-announce-body {
   font-size: 1rem;
   line-height: 1.6;
@@ -247,6 +277,18 @@
 
 .hk-announce-body strong {
   font-weight: 700;
+}
+
+/* Literal values worth setting apart from the sentence around them */
+.hk-cred {
+  display: inline-block;
+  padding: 0.05em 0.45em;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(37, 99, 235, 0.25);
+  border-radius: 5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 /* ── Detail cards ──────────────────────────────────────────── */
@@ -468,6 +510,12 @@
 }
 
 @media (max-width: 640px) {
+  /* Stack the label above its text rather than squeezing two narrow columns */
+  .hk-announce-item {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+
   .hk-hero {
     padding: 3.5rem 1.25rem 3rem;
   }
