@@ -1,0 +1,501 @@
+/* ══════════════════════════════════════════════════════════════
+   MarinHacks — live hackathon hub (/hackathon)
+
+   Shares the tokens and type stack of the marketing site, but sits
+   in a tighter, denser layout: this page is read at a glance while
+   someone is mid-build, not scrolled through as a pitch.
+   ══════════════════════════════════════════════════════════════ */
+
+:root {
+  --navy: #1e3a5f;
+  --accent: #2563eb;
+  --accent-light: #60a5fa;
+  --gray: #5a7a99;
+  --card-bg: #ffffff;
+  --bg-page: #f0f7ff;
+  --bg-section: #e4f0fb;
+
+  --line: rgba(37, 99, 235, 0.15);
+  --line-strong: rgba(37, 99, 235, 0.32);
+  --shadow-sm: 0 2px 8px rgba(37, 99, 235, 0.06);
+  --shadow-md: 0 8px 30px rgba(37, 99, 235, 0.1);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* One typeface for the whole page — the same grotesque the clock is set in.
+   Scoped to #root so it beats the Inter default in index.css regardless of
+   stylesheet order, and stays out of the main site's bundle. */
+#root {
+  font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+}
+
+/* ── Shared primitives ─────────────────────────────────────── */
+.hk-container {
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+.hk-eyebrow {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.hk-link {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 0.2s;
+}
+
+.hk-link:hover {
+  color: var(--accent-light);
+}
+
+/* ── Hero / countdown ──────────────────────────────────────── */
+.hk-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 5.5rem 2rem 4.5rem;
+  background:
+    radial-gradient(ellipse 70% 90% at 50% -10%, rgba(59, 130, 246, 0.16) 0%, transparent 70%),
+    var(--bg-page);
+  border-bottom: 1px solid var(--line);
+}
+
+.hk-hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(37, 99, 235, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+  /* Fade the grid out toward the bottom so it never competes with the clock */
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 85%);
+  pointer-events: none;
+}
+
+.hk-hero-inner {
+  position: relative;
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hk-clock-caption {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+.hk-clock {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: clamp(0.4rem, 2vw, 1.1rem);
+  margin-top: 0.85rem;
+}
+
+.hk-clock-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hk-clock-value {
+  font-size: clamp(4rem, 15vw, 8.5rem);
+  font-weight: 700;
+  line-height: 0.88;
+  letter-spacing: -0.045em;
+  /* Fixed-width digits keep the clock from twitching on every tick */
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1;
+  color: var(--navy);
+}
+
+.hk-clock-label {
+  margin-top: 0.9rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+/* Matching the digit metrics keeps the colon on the same baseline instead of
+   floating above the numbers. */
+.hk-clock-colon {
+  font-size: clamp(4rem, 15vw, 8.5rem);
+  font-weight: 700;
+  line-height: 0.88;
+  color: var(--accent-light);
+}
+
+/* ── Up next ───────────────────────────────────────────────── */
+.hk-next {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.hk-next-head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.hk-next-time {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  font-variant-numeric: tabular-nums;
+}
+
+.hk-next-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.hk-next-detail {
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--gray);
+}
+
+.hk-next-in {
+  padding: 0.4rem 0.85rem;
+  white-space: nowrap;
+  background: rgba(37, 99, 235, 0.08);
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Sections ──────────────────────────────────────────────── */
+.hk-section {
+  padding: 4.5rem 2rem;
+}
+
+.hk-section-alt {
+  background: var(--bg-section);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.hk-section-eyebrow {
+  margin-bottom: 0.6rem;
+}
+
+.hk-section-title {
+  font-size: clamp(1.75rem, 3.5vw, 2.35rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--navy);
+}
+
+.hk-section-desc {
+  max-width: 56ch;
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--gray);
+}
+
+/* ── Announcement ──────────────────────────────────────────── */
+.hk-announce {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 3.5rem;
+  padding: 1.35rem 1.6rem;
+  background: linear-gradient(135deg, #dbeafe 0%, #e8f2fe 100%);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-md);
+}
+
+.hk-announce-body {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--navy);
+}
+
+.hk-announce-body strong {
+  font-weight: 700;
+}
+
+/* ── Detail cards ──────────────────────────────────────────── */
+.hk-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.hk-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.hk-card:hover {
+  border-color: var(--line-strong);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.hk-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--navy);
+}
+
+.hk-card-body {
+  /* Push the action to the bottom so buttons line up across the row */
+  flex: 1;
+  margin: 0.6rem 0 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--gray);
+}
+
+.hk-btn {
+  display: inline-block;
+  padding: 0.7rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.25s var(--ease);
+}
+
+.hk-btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border: 1px solid var(--accent);
+}
+
+.hk-btn-primary:hover {
+  background: var(--accent-light);
+  border-color: var(--accent-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.28);
+}
+
+.hk-btn-secondary {
+  background: transparent;
+  color: var(--navy);
+  border: 1px solid var(--line-strong);
+}
+
+.hk-btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ── Promo code chip ───────────────────────────────────────── */
+.hk-code {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  padding: 0.65rem 0.65rem 0.65rem 1rem;
+  background: rgba(37, 99, 235, 0.05);
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.hk-code:hover {
+  background: rgba(37, 99, 235, 0.09);
+  border-color: var(--accent);
+}
+
+.hk-code-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--navy);
+}
+
+.hk-code-action {
+  min-width: 3.75rem;
+  padding: 0.3rem 0.6rem;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ── Judging rules ─────────────────────────────────────────── */
+.hk-rules {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem 2.5rem;
+  margin-top: 2.5rem;
+  list-style: none;
+}
+
+.hk-rule {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.hk-rule-num {
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.hk-rule-title {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.hk-rule-body {
+  margin-top: 0.3rem;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--gray);
+}
+
+/* ── Footer ────────────────────────────────────────────────── */
+.hk-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 2rem 2.5rem;
+  background: var(--bg-section);
+  border-top: 1px solid var(--line);
+}
+
+.hk-footer-logo {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.hk-footer-logo span {
+  color: var(--accent);
+}
+
+.hk-footer-copy,
+.hk-footer-mail {
+  font-size: 0.8rem;
+  color: var(--gray);
+}
+
+.hk-footer-mail {
+  color: var(--accent);
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .hk-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .hk-rules {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .hk-next {
+    grid-template-columns: 1fr auto;
+    gap: 0.85rem 1rem;
+  }
+
+  .hk-next-head {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.75rem;
+  }
+
+  .hk-next-body {
+    grid-column: 1 / -1;
+  }
+
+  .hk-next-in {
+    justify-self: end;
+  }
+}
+
+@media (max-width: 640px) {
+  .hk-hero {
+    padding: 3.5rem 1.25rem 3rem;
+  }
+
+  .hk-section {
+    padding: 3.25rem 1.25rem;
+  }
+
+  .hk-clock-value,
+  .hk-clock-colon {
+    font-size: clamp(3rem, 19vw, 5rem);
+  }
+
+  .hk-clock-label {
+    margin-top: 0.65rem;
+    font-size: 0.58rem;
+    letter-spacing: 0.14em;
+  }
+
+  .hk-footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hk-card:hover,
+  .hk-btn:hover {
+    transform: none;
+  }
+}
