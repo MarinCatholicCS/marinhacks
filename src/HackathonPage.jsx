@@ -10,6 +10,7 @@ const SUBMISSIONS_DUE = at('18:00:00')
 
 const DISCORD_URL = 'https://discord.gg/apMVepA7fK'
 const SLIDES_URL = 'https://docs.google.com/presentation/d/1FhC81Hd6JiTZipPSfEEf9bWlpIUblvla7CpzFJsLPhA/edit?usp=sharing'
+const RUBRIC_URL = 'https://docs.google.com/document/d/1MawAUAX7cEP9iJZS9J5PYtmBIKCA4w5N4ESCzp_ieEY/edit?usp=sharing'
 const DOMAIN_PROMO = 'MRN2026'
 
 /* Drives the "up next" line under the clock. */
@@ -268,6 +269,16 @@ export default function HackathonPage() {
                   <p className="hk-announce-body">
                     The theme is <strong>Safety</strong>. Every project must relate to it, including
                     those in a track.
+                  </p>
+                </li>
+                <li className="hk-announce-item">
+                  <span className="hk-announce-label">Judging rubric</span>
+                  <p className="hk-announce-body">
+                    The rubric judges will score you against is published.{' '}
+                    <a href={RUBRIC_URL} target="_blank" rel="noreferrer" className="hk-link">
+                      Read it before you present
+                    </a>
+                    .
                   </p>
                 </li>
                 <li className="hk-announce-item">
