@@ -19,7 +19,7 @@ import marinItLogo from './assets/sponsors/marinit.png'
 import marinSonomaLogo from './assets/sponsors/marinsonoma.webp'
 import prospectusPdf from './assets/MarinHacks_Sponsorship_Prospectus.pdf'
 
-const EVENT_DATE = new Date('2026-08-02T08:00:00-08:00')
+const DEVPOST_URL = 'https://marinhacks.devpost.com/'
 
 const schedule = [
   { time: '8:00 AM', title: 'Check-in', desc: 'Participants arrive and get settled', detail: 'Check in at the entrance of the JPII Student Center. Remember to bring your signed participant waiver. Feel free to get your workspace set up while you wait for the opening ceremony.' },
@@ -37,7 +37,6 @@ const schedule = [
 ]
 
 const judges = [
-  { name: 'Disha Patel', title: 'Software Engineer', company: 'Apple' },
   { name: 'Preyansh Shah', title: 'Senior Engineering Manager', company: 'Cisco' },
   { name: 'Karan Shah', title: 'Product Manager', company: 'Intuit' },
   { name: 'Flavia Wortsman', title: 'Senior Manager', company: 'Meta' },
@@ -76,8 +75,8 @@ const faqs = [
     a: "Yes, there is a theme and it will be revealed during the opening ceremony. All projects, (even in different tracks), must relate to the theme.",
   },
   {
-    q: "What are the prizes?",
-    a: "First place gets $500, a 2 year Code Crafter subscription, and a $50 PCBWay coupon, second place gets $300, a 1 year Code Crafter subscription, and a $50 PCBWay coupon, and third place gets $200, a 6 month Code Crafter subscription, and a $50 PCBWay coupon. Best Solo Prize gets an Amazon Alexa, and Best Beginner gets Arduino Starter Kits. Mystery Track One and Mystery Track Two each get a mystery prize. Every submitted project also receives Wolfram Plus trials, MarinHacks & Coder merch (t-shirts, stickers, toys, and hoodies), a free domain name, OpenAI project credits, and an AI agent book. Track and overall winners will also be considered for YRI Fellowship research scholarships, VC grants, and PCBWay coupons. These tracks and prize amounts are not yet final — we're working on making them worth even more.",
+    q: "Who won?",
+    a: "Seismic took first place overall, Firefly took second, and Probe took third. Overseer won first place in the Fintech track, with Splitkeypq taking second. Ledge won the MoHack track, Allroots won Best Beginner, and Findr won the Best Solo prize. See the full results in the Prizes section above.",
   }
 ]
 
@@ -100,34 +99,6 @@ const organizers = []
 const advisors = [
   { name: 'Mr. Adib', role: 'Faculty Advisor', initials: 'MA' },
 ]
-
-/* ── Countdown hook ── */
-function useCountdown(targetDate) {
-  const [timeLeft, setTimeLeft] = useState(getTimeLeft(targetDate))
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(getTimeLeft(targetDate))
-    }, 1000)
-    return () => clearInterval(timer)
-  }, [targetDate])
-
-  return timeLeft
-}
-
-function getTimeLeft(targetDate) {
-  const now = new Date()
-  const diff = targetDate - now
-
-  if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 }
-
-  return {
-    days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-    hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
-    minutes: Math.floor((diff / (1000 * 60)) % 60),
-    seconds: Math.floor((diff / 1000) % 60),
-  }
-}
 
 /* ── Scroll-reveal hook ── */
 function useReveal(threshold = 0.15) {
@@ -319,7 +290,6 @@ export default function App() {
   const [faqRef, faqVisible] = useReveal(0.1)
   const [ctaRef, ctaVisible] = useReveal(0.1)
 
-  const countdown = useCountdown(EVENT_DATE)
   const [hoveredEvent, setHoveredEvent] = useState(schedule[0])
 
   /* Parallax on hero on mouse move */
@@ -349,7 +319,7 @@ export default function App() {
           <li><a href="#judges">Judges</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="https://hcb.hackclub.com/donations/start/marinhacks" target="_blank" rel="noreferrer" className="nav-donate">Donate</a></li>
-          <li><a href="https://forms.gle/J4gnhbYSvcsPfxUf8" target="_blank" rel="noreferrer" className="nav-cta">Fill the Waiver!</a></li>
+          <li><a href={DEVPOST_URL} target="_blank" rel="noreferrer" className="nav-cta">View Projects</a></li>
         </ul>
       </nav>
 
@@ -363,34 +333,14 @@ export default function App() {
           <h1>
             Marin<span className="highlight">Hacks</span>
           </h1>
-          <p className="hero-date">August 2, 2026 · Marin Catholic JPII Student Center, Kentfield CA</p>
-
-          {/* Countdown Timer */}
-          <div className="countdown">
-            <div className="countdown-unit">
-              <span className="countdown-number">{countdown.days}</span>
-              <span className="countdown-label">Days</span>
-            </div>
-            <div className="countdown-sep">:</div>
-            <div className="countdown-unit">
-              <span className="countdown-number">{String(countdown.hours).padStart(2, '0')}</span>
-              <span className="countdown-label">Hours</span>
-            </div>
-            <div className="countdown-sep">:</div>
-            <div className="countdown-unit">
-              <span className="countdown-number">{String(countdown.minutes).padStart(2, '0')}</span>
-              <span className="countdown-label">Minutes</span>
-            </div>
-            <div className="countdown-sep">:</div>
-            <div className="countdown-unit">
-              <span className="countdown-number">{String(countdown.seconds).padStart(2, '0')}</span>
-              <span className="countdown-label">Seconds</span>
-            </div>
-          </div>
+          <p className="hero-date">
+            Held August 2, 2026 · Marin Catholic JPII Student Center, Kentfield CA
+          </p>
+          <p className="hero-date">That's a wrap — thank you to everyone who came out and built with us.</p>
 
           <div className="hero-btns">
-            <a href="https://forms.gle/J4gnhbYSvcsPfxUf8" target="_blank" rel="noreferrer" className="btn-primary">
-              Fill the Waiver!
+            <a href={DEVPOST_URL} target="_blank" rel="noreferrer" className="btn-primary">
+              View Projects on Devpost
             </a>
             <a href="https://discord.gg/apMVepA7fK" target="_blank" rel="noreferrer" className="btn-secondary">
               Join our Discord
@@ -425,16 +375,15 @@ export default function App() {
           <div className={`about-grid reveal${aboutVisible ? ' visible' : ''}`}>
             <div>
               <p className="section-label">About</p>
-              <h2 className="section-title">Build something amazing in 12 hours</h2>
+              <h2 className="section-title">Building something amazing in 12 hours</h2>
               <p className="section-desc">
-                MarinHacks is Marin Catholic's inaugural hackathon — a free, 12-hour event open to
-                middle and high school students across the Bay Area. Come with an idea, leave with
-                a project, and compete for prizes alongside hundreds of fellow builders.
+                MarinHacks was Marin Catholic's inaugural hackathon — a free, 12-hour event open to
+                middle and high school students across the Bay Area. Participants came with an idea,
+                left with a project, and competed for prizes alongside fellow builders.
               </p>
               <br />
               <p className="section-desc">
-                We are trying to bring hackathons into Marin County and grow a STEM culture in our community.
-
+                We set out to bring hackathons into Marin County and grow a STEM culture in our community.
               </p>
             </div>
             <div className={`venue-img-wrap reveal${aboutVisible ? ' visible' : ''}`} style={{ transitionDelay: '150ms' }}>
@@ -445,10 +394,10 @@ export default function App() {
 
           <div className="about-cards-row">
             {[
-              { title: 'Theme-Based', desc: 'Build projects around a revealed theme which will be announced day of' },
-              { title: 'Catered Food', desc: 'Lunch and dinner provided. Stay fueled and focused all day.' },
-              { title: 'Real Prizes', desc: 'Compete for Amazon gift cards, track-specific awards including scholarships and sponsor credits, and tool access for every participant.' },
-              { title: 'All Skill Levels', desc: 'Beginners welcome. Solo or team. Form groups on the day of the event.' },
+              { title: 'Theme-Based', desc: "Projects were built around the day-of theme: Safety." },
+              { title: 'Catered Food', desc: 'Lunch and dinner were provided so everyone stayed fueled and focused all day.' },
+              { title: 'Real Prizes', desc: 'Builders competed for Amazon gift cards, track-specific awards including scholarships and sponsor credits, and tool access for every participant.' },
+              { title: 'All Skill Levels', desc: 'Beginners were welcome. Solo or team — groups formed on the day of the event.' },
             ].map((card, i) => (
               <div className={`about-card reveal${aboutVisible ? ' visible' : ''}`} key={card.title} style={{ transitionDelay: `${300 + i * 100}ms` }}>
                 <h4>{card.title}</h4>
@@ -464,17 +413,20 @@ export default function App() {
         <div className="container" ref={prizesRef}>
           <div className={`reveal${prizesVisible ? ' visible' : ''}`}>
             <p className="section-label">Prizes</p>
-            <h2 className="section-title">Get Rewarded for Your Project</h2>
+            <h2 className="section-title">Congratulations to Our Winners</h2>
             <p className="section-desc">
-              After you finish, you will present in front of judges who will decide the following track winners
+              After a full day of building, teams presented to our panel of judges. Here's who took home the wins.
             </p>
+            <a href={DEVPOST_URL} target="_blank" rel="noreferrer" className="btn-secondary">
+              View All Projects on Devpost
+            </a>
           </div>
 
           <div className="prize-podium">
             {[
-              { place: '2nd', title: 'Second Place', cash: '$300', perk: '1 Year Code Crafter Subscription', coupon: '$50 PCBWay Coupon', tier: 'silver' },
-              { place: '1st', title: 'First Place', cash: '$500', perk: '2 Year Code Crafter Subscription', coupon: '$50 PCBWay Coupon', tier: 'gold' },
-              { place: '3rd', title: 'Third Place', cash: '$200', perk: '6 Month Code Crafter Subscription', coupon: '$50 PCBWay Coupon', tier: 'bronze' },
+              { place: '2nd', title: 'Second Place', amount: '$300', team: 'Firefly', members: 'Sanreen Khosla, Meghna Magesh', tier: 'silver' },
+              { place: '1st', title: 'First Place', amount: '$500', team: 'Seismic', members: 'Vihaan Gangai', tier: 'gold' },
+              { place: '3rd', title: 'Third Place', amount: '$200', team: 'Probe', members: 'Sahaj Khandelwal, Stas Kornuta, Maxim Shvets', tier: 'bronze' },
             ].map((p, i) => (
               <div
                 key={p.place}
@@ -482,19 +434,34 @@ export default function App() {
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
                 <h3 className="prize-title">{p.title}</h3>
-                <div className="prize-cash">{p.cash}</div>
-                <p className="prize-perk">{p.perk}</p>
-                <p className="prize-perk">{p.coupon}</p>
+                <div className="prize-cash">{p.amount}</div>
+                <p className="prize-perk"><strong>{p.team}</strong></p>
+                <p className="prize-perk">{p.members}</p>
               </div>
             ))}
           </div>
 
           <div className="prize-categories">
             {[
-              { title: 'Best Solo Prize', items: ['Amazon Alexa'] },
-              { title: 'Best Beginner', items: ['Arduino Starter Kits'] },
-              { title: 'Mystery Track One', items: ['Mystery Prize?'] },
-              { title: 'Mystery Track Two', items: ['Mystery Prize?'] },
+              {
+                title: 'Fintech Track',
+                items: [
+                  { rank: '1st', team: 'Overseer', members: 'Arnav P, Aarav M, Vivaan D, Prayag N' },
+                  { rank: '2nd', team: 'Splitkeypq', members: 'Akahl Saokar, Manav Patel, Tejas Tammana' },
+                ],
+              },
+              {
+                title: 'MoHack / Coolest Project',
+                items: [{ team: 'Ledge', members: 'Anne Nolte, Adam Zheng, Owen Cheng' }],
+              },
+              {
+                title: 'Best Beginner',
+                items: [{ team: 'Allroots', members: 'John Ha, Yuhe Liu, Carson Zenahrio, Bhargava Gumpula' }],
+              },
+              {
+                title: 'Best Solo Prize',
+                items: [{ team: 'Findr', members: 'Nayan Vangala' }],
+              },
             ].map((cat, i) => (
               <div
                 key={cat.title}
@@ -504,7 +471,10 @@ export default function App() {
                 <h4>{cat.title}</h4>
                 <ul className="prize-category-list">
                   {cat.items.map((item) => (
-                    <li key={item}>{item}</li>
+                    <li key={item.team}>
+                      {item.rank ? `${item.rank} — ` : ''}
+                      <strong>{item.team}</strong> — {item.members}
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -512,7 +482,7 @@ export default function App() {
           </div>
 
           <p className={`prize-note reveal${prizesVisible ? ' visible' : ''}`} style={{ transitionDelay: '800ms' }}>
-            Note: these tracks and prize amounts are not yet final. We're working on making them worth even more. In addition, all cash prizes listed above will be given in the form of Amazon Gift Cards. Stay tuned for updates!
+            Congratulations to every team that shipped a project — thank you for building with us.
           </p>
         </div>
       </section>
@@ -693,15 +663,15 @@ export default function App() {
       </section>
 
       {/* CTA */}
-      <section id="register" className="cta-section" ref={ctaRef}>
+      <section id="thanks" className="cta-section" ref={ctaRef}>
         <div className={`container reveal${ctaVisible ? ' visible' : ''}`}>
-          <p className="section-label">Register</p>
-          <h2 className="section-title">Ready to build?</h2>
+          <p className="section-label">Thank You</p>
+          <h2 className="section-title">MarinHacks 2026 is a wrap</h2>
           <p className="section-desc">
-            Spots are limited. Sign up to secure your place at MarinHacks and be the first to hear
-            about the theme, sponsors, and updates. More details to come.
+            Thank you to every participant, sponsor, judge, and volunteer who made our inaugural
+            hackathon possible. Check out what teams built, and stay tuned in Discord for what's next.
           </p>
-          <a href="https://forms.gle/J4gnhbYSvcsPfxUf8" target="_blank" rel="noreferrer" className="btn-primary btn-glow">Fill the Waiver!</a>
+          <a href={DEVPOST_URL} target="_blank" rel="noreferrer" className="btn-primary btn-glow">View Projects on Devpost</a>
         </div>
       </section>
       </main>
