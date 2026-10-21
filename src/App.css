@@ -323,21 +323,6 @@ nav {
   overflow: hidden;
 }
 
-.hero-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(37, 99, 235, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(37, 99, 235, 0.07) 1px, transparent 1px);
-  background-size: 60px 60px;
-  animation: grid-fade 2s ease-out both;
-}
-
-@keyframes grid-fade {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
 .hero-content {
   position: relative;
   z-index: 1;
@@ -991,16 +976,22 @@ section {
 /* ══════════════════════════════════════
    TEAM
    ══════════════════════════════════════ */
-.team-leads {
-  display: flex;
+/* Leads and assistants share one column definition so both rows line up
+   on the same grid and every card is the same size. */
+.team-leads,
+.team-grid.team-assistants {
+  display: grid;
+  grid-template-columns: repeat(3, 220px);
   justify-content: center;
-  gap: 2rem;
-  margin-top: 3rem;
-  margin-bottom: 1.5rem;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.team-leads .team-card {
-  min-width: 220px;
+.team-leads {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
 }
 
 .team-card-lead {
@@ -1023,11 +1014,6 @@ section {
 }
 
 .team-assistants {
-  grid-template-columns: repeat(3, minmax(180px, 220px));
-  justify-content: center;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 1.5rem;
 }
 
@@ -1049,6 +1035,22 @@ section {
   text-align: center;
   transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
   box-shadow: 0 2px 8px rgba(37, 99, 235, 0.06);
+  /* Uniform box across both rows; content centers so the shorter
+     assistant cards don't sit top-heavy in the taller lead box. */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 224px;
+  height: 100%;
+}
+
+/* Cards that link out are wrapped in an anchor — let it fill the grid cell
+   so the card inside can stretch to the row height. */
+.team-leads > a,
+.team-assistants > a {
+  display: block;
+  height: 100%;
 }
 
 .team-card:hover {
@@ -1612,9 +1614,10 @@ footer {
     grid-template-columns: 80px 1fr;
   }
 
-  .team-leads {
-    flex-direction: column;
-    align-items: center;
+  /* Fixed 220px columns overflow narrow screens — let them reflow. */
+  .team-leads,
+  .team-grid.team-assistants {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 220px));
   }
 
   .tbd-placeholder {
@@ -1645,4 +1648,138 @@ footer {
   .floating-shapes {
     display: none;
   }
+}
+
+/* ══════════════════════════════════════
+   HERO PHOTO CAROUSEL
+   ══════════════════════════════════════ */
+.hero-carousel {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.hero-carousel-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.06);
+  transition: opacity 1.6s ease-in-out, transform 7s ease-out;
+  will-change: opacity, transform;
+}
+
+.hero-carousel-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Keeps the headline readable over the photos */
+.hero-carousel-veil {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(240, 247, 255, 0.72) 0%, rgba(240, 247, 255, 0.55) 45%, rgba(240, 247, 255, 0.88) 100%),
+    radial-gradient(ellipse 62% 48% at 50% 46%, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.35) 55%, transparent 78%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-carousel-slide {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* Hero overlays sit above the photos */
+.hero-bg,
+.hero .floating-shapes {
+  z-index: 0;
+}
+
+/* ══════════════════════════════════════
+   INLINE BUTTON (inside flow text)
+   ══════════════════════════════════════ */
+.btn-inline {
+  display: inline-block;
+  margin-top: 1.75rem;
+  text-decoration: none;
+  line-height: 1.2;
+}
+
+/* Game jam CTA */
+.btn-jam {
+  background: #ec3750;
+}
+
+.btn-jam:hover {
+  background: #ff5069;
+  box-shadow: 0 8px 24px rgba(236, 55, 80, 0.32);
+}
+
+/* ══════════════════════════════════════
+   PODIUM CARDS AS DEVPOST LINKS
+   ══════════════════════════════════════ */
+a.prize-podium-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.prize-devpost-link {
+  display: block;
+  margin-top: 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.prize-podium-card:hover .prize-devpost-link,
+.prize-podium-card:focus-visible .prize-devpost-link {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Always visible on touch devices, where there is no hover */
+@media (hover: none) {
+  .prize-devpost-link {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ══════════════════════════════════════
+   SPONSOR LOGO SIZING
+   ══════════════════════════════════════ */
+/* Cap the lead logo at its natural size so it is not upscaled and blurred */
+.sponsor-card-lead .sponsor-logo-lead {
+  width: auto;
+  max-width: min(100%, 420px);
+  max-height: 96px;
+}
+
+/* Buttons rendered as anchors should not inherit link underlines */
+.btn-primary,
+.btn-secondary,
+.btn-glow {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* Normalize optical logo size across tiers.
+   Wide wordmarks are width-bound, stacked marks are height-bound, so each tier
+   caps both axes to land every logo on a similar visual weight. */
+.sponsor-grid-general .sponsor-logo {
+  max-width: 190px;
+  max-height: 74px;
+}
+
+.sponsor-grid-support .sponsor-logo {
+  max-width: 170px;
+  max-height: 48px;
 }

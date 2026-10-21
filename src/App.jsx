@@ -10,7 +10,6 @@ import pcbwayLogo from './assets/sponsors/PCBWay.jpg'
 import codecraftersLogo from './assets/sponsors/codecrafters.svg'
 import wolframLogo from './assets/sponsors/wolfram.png'
 import aopsLogo from './assets/sponsors/aops.png'
-import monetLogo from './assets/sponsors/monet.png'
 import yriLogo from './assets/sponsors/yri.jpg'
 import xyzLogo from './assets/sponsors/xyz-logo-color.png'
 import mastraLogo from './assets/sponsors/mastra.svg'
@@ -18,8 +17,18 @@ import bankOfMarinLogo from './assets/sponsors/bank_of_marin.jfif'
 import marinItLogo from './assets/sponsors/marinit.png'
 import marinSonomaLogo from './assets/sponsors/marinsonoma.webp'
 import prospectusPdf from './assets/MarinHacks_Sponsorship_Prospectus.pdf'
+import hero1 from './assets/gallery/hero-1.jpg'
+import hero2 from './assets/gallery/hero-2.jpg'
+import hero3 from './assets/gallery/hero-3.jpg'
+import hero4 from './assets/gallery/hero-4.jpg'
+import hero5 from './assets/gallery/hero-5.jpg'
+import hero6 from './assets/gallery/hero-6.jpg'
+import hero7 from './assets/gallery/hero-7.jpg'
 
 const DEVPOST_URL = 'https://marinhacks.devpost.com/'
+const GAMEJAM_URL = 'https://haven.hackclub.com/marin'
+
+const heroPhotos = [hero1, hero2, hero3, hero4, hero5, hero6, hero7]
 
 const schedule = [
   { time: '8:00 AM', title: 'Check-in', desc: 'Participants arrive and get settled', detail: 'Check in at the entrance of the JPII Student Center. Remember to bring your signed participant waiver. Feel free to get your workspace set up while you wait for the opening ceremony.' },
@@ -199,6 +208,31 @@ function Starfield() {
   return <canvas ref={canvasRef} className="starfield" />
 }
 
+/* ── Hero photo carousel ── */
+function HeroCarousel() {
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (reduce) return
+    const id = setInterval(() => setIndex(i => (i + 1) % heroPhotos.length), 5000)
+    return () => clearInterval(id)
+  }, [])
+
+  return (
+    <div className="hero-carousel" aria-hidden="true">
+      {heroPhotos.map((src, i) => (
+        <div
+          key={src}
+          className={`hero-carousel-slide${i === index ? ' active' : ''}`}
+          style={{ backgroundImage: `url(${src})` }}
+        />
+      ))}
+      <div className="hero-carousel-veil" />
+    </div>
+  )
+}
+
 /* ── Floating shapes ── */
 function FloatingShapes() {
   return (
@@ -326,8 +360,8 @@ export default function App() {
       <main>
       {/* HERO */}
       <section className="hero" id="home" onMouseMove={handleMouseMove} ref={heroContainerRef}>
+        <HeroCarousel />
         <div className="hero-bg" />
-        <div className="hero-grid" />
         <FloatingShapes />
         <div className={`hero-content${heroVisible ? ' visible' : ''}`} ref={heroRef}>
           <h1>
@@ -341,6 +375,9 @@ export default function App() {
           <div className="hero-btns">
             <a href={DEVPOST_URL} target="_blank" rel="noreferrer" className="btn-primary">
               View Projects on Devpost
+            </a>
+            <a href={GAMEJAM_URL} target="_blank" rel="noreferrer" className="btn-primary btn-jam">
+              Join our Game Jam, MarinHaven
             </a>
             <a href="https://discord.gg/apMVepA7fK" target="_blank" rel="noreferrer" className="btn-secondary">
               Join our Discord
@@ -417,19 +454,22 @@ export default function App() {
             <p className="section-desc">
               After a full day of building, teams presented to our panel of judges. Here's who took home the wins.
             </p>
-            <a href={DEVPOST_URL} target="_blank" rel="noreferrer" className="btn-secondary">
+            <a href={DEVPOST_URL} target="_blank" rel="noreferrer" className="btn-secondary btn-inline">
               View All Projects on Devpost
             </a>
           </div>
 
           <div className="prize-podium">
             {[
-              { place: '2nd', title: 'Second Place', amount: '$300', team: 'Firefly', members: 'Sanreen Khosla, Meghna Magesh', tier: 'silver' },
-              { place: '1st', title: 'First Place', amount: '$500', team: 'Seismic', members: 'Vihaan Gangai', tier: 'gold' },
-              { place: '3rd', title: 'Third Place', amount: '$200', team: 'Probe', members: 'Sahaj Khandelwal, Stas Kornuta, Maxim Shvets', tier: 'bronze' },
+              { place: '2nd', title: 'Second Place', amount: '$300', team: 'Firefly', members: 'Sanreen Khosla, Meghna Magesh', tier: 'silver', url: 'https://devpost.com/software/fyrefly-9dif8y' },
+              { place: '1st', title: 'First Place', amount: '$500', team: 'Seismic', members: 'Vihaan Gangai', tier: 'gold', url: 'https://devpost.com/software/seismic-nueydx' },
+              { place: '3rd', title: 'Third Place', amount: '$200', team: 'Probe', members: 'Sahaj Khandelwal, Stas Kornuta, Maxim Shvets', tier: 'bronze', url: 'https://devpost.com/software/probe-03dznw' },
             ].map((p, i) => (
-              <div
+              <a
                 key={p.place}
+                href={p.url}
+                target="_blank"
+                rel="noreferrer"
                 className={`prize-podium-card prize-${p.tier} reveal${prizesVisible ? ' visible' : ''}`}
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
@@ -437,7 +477,8 @@ export default function App() {
                 <div className="prize-cash">{p.amount}</div>
                 <p className="prize-perk"><strong>{p.team}</strong></p>
                 <p className="prize-perk">{p.members}</p>
-              </div>
+                <span className="prize-devpost-link">View on Devpost →</span>
+              </a>
             ))}
           </div>
 
@@ -605,14 +646,11 @@ export default function App() {
               <a href="https://artofproblemsolving.com/" target="_blank" rel="noreferrer" className="sponsor-card">
                 <img src={aopsLogo} alt="Art of Problem Solving" className="sponsor-logo" loading="lazy" decoding="async" />
               </a>
-              <a href="https://www.monet.gg/" target="_blank" rel="noreferrer" className="sponsor-card">
-                <img src={monetLogo} alt="Monet" className="sponsor-logo" loading="lazy" decoding="async" />
-              </a>
               <a href="https://gen.xyz/" target="_blank" rel="noreferrer" className="sponsor-card">
                 <img src={xyzLogo} alt=".XYZ" className="sponsor-logo" loading="lazy" decoding="async" />
               </a>
               <a href="https://mastra.ai/" target="_blank" rel="noreferrer" className="sponsor-card">
-                <img src={mastraLogo} alt="Mastra" className="sponsor-logo" style={{ maxWidth: '130px' }} loading="lazy" decoding="async" />
+                <img src={mastraLogo} alt="Mastra" className="sponsor-logo" loading="lazy" decoding="async" />
               </a>
             </div>
           </div>
