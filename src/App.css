@@ -1708,16 +1708,6 @@ footer {
   line-height: 1.2;
 }
 
-/* Game jam CTA */
-.btn-jam {
-  background: #ec3750;
-}
-
-.btn-jam:hover {
-  background: #ff5069;
-  box-shadow: 0 8px 24px rgba(236, 55, 80, 0.32);
-}
-
 /* ══════════════════════════════════════
    PODIUM CARDS AS DEVPOST LINKS
    ══════════════════════════════════════ */
@@ -1783,3 +1773,4 @@ a.prize-podium-card {
   max-width: 170px;
   max-height: 48px;
 }
+

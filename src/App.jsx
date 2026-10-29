@@ -26,7 +26,6 @@ import hero6 from './assets/gallery/hero-6.jpg'
 import hero7 from './assets/gallery/hero-7.jpg'
 
 const DEVPOST_URL = 'https://marinhacks.devpost.com/'
-const GAMEJAM_URL = 'https://haven.hackclub.com/marin'
 
 const heroPhotos = [hero1, hero2, hero3, hero4, hero5, hero6, hero7]
 
@@ -370,14 +369,11 @@ export default function App() {
           <p className="hero-date">
             Held August 2, 2026 · Marin Catholic JPII Student Center, Kentfield CA
           </p>
-          <p className="hero-date">That's a wrap — thank you to everyone who came out and built with us.</p>
+          <p className="hero-date">MarinHacks 2 · Coming Spring 2027.</p>
 
           <div className="hero-btns">
             <a href={DEVPOST_URL} target="_blank" rel="noreferrer" className="btn-primary">
               View Projects on Devpost
-            </a>
-            <a href={GAMEJAM_URL} target="_blank" rel="noreferrer" className="btn-primary btn-jam">
-              Join our Game Jam, MarinHaven
             </a>
             <a href="https://discord.gg/apMVepA7fK" target="_blank" rel="noreferrer" className="btn-secondary">
               Join our Discord
